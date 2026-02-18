@@ -3,128 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abhi Labs | Tomorrow's Tech, Today</title>
-    <link rel="icon" type="image/png" href="Logo.png">
+    <title>Abhi Labs | Tomorrow's Tech Today</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --business-teal: #0d9488; }
+        .text-business { color: var(--business-teal); }
+        .bg-business { background-color: var(--business-teal); }
+
+        .hero-gradient {
+            background: radial-gradient(circle at 20% 30%, rgba(13, 148, 136, 0.05) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.05) 0%, transparent 40%);
+        }
+
+        .hero-post-img {
+            object-fit: contain;
+            filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.3));
+        }
+    </style>
 </head>
-<body class="bg-slate-50 text-slate-900 font-sans">
+<body class="bg-slate-50 text-slate-900 font-sans antialiased text-left">
 
-    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <img src="Logo.png" alt="Abhi Labs Logo" class="w-10 h-10 rounded-lg shadow-sm object-contain bg-white">
-                <span class="text-2xl font-black tracking-tighter text-slate-800 uppercase">Abhi Labs</span>
+<nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <img src="./assets/developer_logo.png" alt="Abhi Labs" class="h-8 w-auto object-contain">
+            <span class="text-2xl font-black tracking-tighter text-slate-800 uppercase">ABHI <span class="text-business">LABS</span></span>
+        </div>
+        <div class="flex gap-10 items-center">
+            <a href="#apps" class="text-sm font-bold text-slate-600 hover:text-business transition uppercase tracking-widest">Our Apps</a>
+            <a href="./about/index.html" class="text-sm font-bold text-slate-600 hover:text-business transition uppercase tracking-widest">About Us</a>
+        </div>
+    </div>
+</nav>
+
+<header class="relative pt-48 pb-32 px-6 hero-gradient overflow-hidden text-center">
+    <div class="max-w-7xl mx-auto relative z-10">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full bg-white border border-slate-200 shadow-sm mx-auto">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-teal-500"></span>
+                </span>
+            <span class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500">Tomorrow's Tech Today</span>
+        </div>
+        <h1 class="text-5xl md:text-8xl font-black text-slate-900 leading-[0.9] mb-8 tracking-tighter uppercase">
+            Simple. Smart. <br><span class="text-business italic underline decoration-teal-100 underline-offset-8">Reliable.</span>
+        </h1>
+        <p class="text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed mb-12">
+            Abhi Labs builds simple, smart, and reliable Android apps—bringing tomorrow’s tech to users today.
+        </p>
+        <div class="flex flex-wrap justify-center gap-6">
+            <div class="flex items-center gap-3 px-6 py-3 bg-white rounded-2xl border border-slate-200 shadow-sm">
+                <i class="fas fa-users text-business"></i>
+                <span class="text-sm font-bold text-slate-700 italic">15+ Years Industry Expertise</span>
             </div>
-            <div class="hidden md:flex gap-8 font-medium text-slate-600">
-                <a href="#features" class="hover:text-teal-600 transition">Features</a>
-                <a href="#gallery" class="hover:text-teal-600 transition">Themes</a>
-                <a href="/privacy-policy.html" class="hover:text-teal-600 transition">Privacy</a>
+            <div class="flex items-center gap-3 px-6 py-3 bg-white rounded-2xl border border-slate-200 shadow-sm">
+                <i class="fab fa-android text-business"></i>
+                <span class="text-sm font-bold text-slate-700 italic">10+ Years Android Focused</span>
             </div>
         </div>
-    </nav>
+    </div>
+</header>
 
-    <header class="pt-40 pb-20 px-6 text-center lg:text-left max-w-6xl mx-auto lg:flex items-center gap-12">
-        <div class="lg:w-1/2">
-            <span class="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wide text-teal-700 uppercase bg-teal-100 rounded-full">
-                Tomorrow's Tech, Today
-            </span>
-            <h1 class="text-5xl lg:text-7xl font-extrabold text-slate-900 leading-tight mb-6 uppercase tracking-tighter">
-                AI QR Scanner <br><span class="text-teal-600 italic">Secure & Smart</span>
-            </h1>
-            <p class="text-xl text-slate-600 mb-10 max-w-xl leading-relaxed">
-                Experience the next generation of scanning. More than a simple reader, our AI verifies every code before you act, keeping you safe in the digital world.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <a href="#" class="bg-slate-900 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-slate-800 transition shadow-xl flex items-center justify-center gap-2">
-                    <i class="fa-brands fa-google-play"></i> Get it on Google Play
-                </a>
-            </div>
+<section id="apps" class="py-32 bg-white border-y border-slate-100 relative">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="mb-20 text-left">
+            <h2 class="text-4xl md:text-5xl font-black mb-4 uppercase tracking-tight">Our Portfolio</h2>
+            <p class="text-slate-500 italic max-w-xl">High-performance utilities built with world-class engineering standards.</p>
         </div>
 
-        <div class="lg:w-1/2 mt-20 lg:mt-0 relative flex justify-center lg:justify-end">
-            <div class="absolute -z-10 w-80 h-80 bg-teal-400/20 blur-3xl rounded-full top-0"></div>
-            
-            <img src="2.jpg" alt="Dark Mode" class="w-48 md:w-56 rounded-[2rem] border-4 border-slate-900 shadow-2xl absolute -rotate-12 -translate-x-20 translate-y-10 opacity-80 hidden md:block">
-            
-            <img src="3.png" alt="AI QR Scanner Hero" class="w-56 md:w-64 rounded-[2.5rem] border-8 border-slate-900 shadow-2xl relative z-10 transform hover:scale-105 transition duration-500 bg-black">
-            
-            <img src="5.png" alt="Business Pro" class="w-48 md:w-56 rounded-[2rem] border-4 border-slate-900 shadow-2xl absolute rotate-12 translate-x-20 translate-y-10 opacity-80 hidden md:block">
-        </div>
-    </header>
-
-    <section id="features" class="py-24 bg-white border-y border-slate-200">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 italic text-slate-800 uppercase tracking-tight">Built for the Future</h2>
-                <p class="text-slate-500 max-w-2xl mx-auto text-lg">We don't just build apps; we build intelligent experiences using the latest Android standards.</p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-8 bg-slate-50 rounded-3xl border border-slate-100 hover:shadow-xl transition group">
-                    <div class="w-14 h-14 bg-teal-600 text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-teal-200 shadow-lg group-hover:scale-110 transition">
-                        <i class="fa-solid fa-brain"></i>
+        <div class="group relative rounded-[3.5rem] bg-slate-900 text-white overflow-hidden shadow-2xl transition-all duration-700 border border-slate-800">
+            <div class="grid lg:grid-cols-2 gap-0">
+                <div class="p-10 md:p-20 flex flex-col justify-center order-2 lg:order-1 text-left">
+                    <div class="flex items-center gap-4 mb-10">
+                        <img src="./apps/ai-qr-barcode/assets/applogo.png" alt="QR App Icon" class="w-20 h-20 rounded-2xl shadow-2xl group-hover:scale-110 transition-transform duration-500">
+                        <div>
+                            <span class="text-[10px] font-black tracking-[0.3em] text-teal-400 uppercase">Featured Project</span>
+                            <h3 class="text-4xl md:text-5xl font-black tracking-tighter uppercase leading-none mt-2">AI QR Scanner</h3>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 uppercase tracking-tight">AI Analysis</h3>
-                    <p class="text-slate-600 leading-relaxed">Contextual insights for UPI payments, WiFi, and secure URL previews before you click.</p>
-                </div>
-
-                <div class="p-8 bg-slate-50 rounded-3xl border border-slate-100 hover:shadow-xl transition group">
-                    <div class="w-14 h-14 bg-teal-600 text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-teal-200 shadow-lg group-hover:scale-110 transition">
-                        <i class="fa-solid fa-palette"></i>
+                    <p class="text-xl text-slate-400 mb-10 leading-relaxed font-light">
+                        Intelligent scanning meets proactive action. Experience AI-driven contextual analysis for UPI, WiFi, and Secure URLs—all processed locally for absolute privacy.
+                    </p>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-12 py-8 border-y border-slate-800 font-mono">
+                        <div class="text-left"><span class="block text-[10px] text-slate-500 uppercase mb-1">Architecture</span><span class="text-xs font-bold text-slate-200">Compose</span></div>
+                        <div class="text-left"><span class="block text-[10px] text-slate-500 uppercase mb-1">Data Storage</span><span class="text-xs font-bold text-slate-200">Room DB</span></div>
+                        <div class="text-left"><span class="block text-[10px] text-slate-500 uppercase mb-1">AI Engine</span><span class="text-xs font-bold text-slate-200">ML Kit</span></div>
+                        <div class="text-left"><span class="block text-[10px] text-slate-500 uppercase mb-1">Design</span><span class="text-xs font-bold text-slate-200">Material 3</span></div>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 uppercase tracking-tight">Material 3</h3>
-                    <p class="text-slate-600 leading-relaxed">Personalize with 4 unique themes, including Midnight Dark and Android 12+ Dynamic Color.</p>
-                </div>
-
-                <div class="p-8 bg-slate-50 rounded-3xl border border-slate-100 hover:shadow-xl transition group">
-                    <div class="w-14 h-14 bg-teal-600 text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-teal-200 shadow-lg group-hover:scale-110 transition">
-                        <i class="fa-solid fa-user-shield"></i>
+                    <div class="flex flex-col sm:flex-row gap-6">
+                        <a href="./apps/ai-qr-barcode/index.html" class="bg-white text-slate-900 px-10 py-5 rounded-2xl font-black text-center hover:bg-teal-400 transition-colors uppercase tracking-widest text-sm shadow-xl">Explore Details</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.abhilabs.aiqrbarcodescanner" target="_blank" class="flex items-center justify-center gap-3 px-10 py-5 bg-slate-800 border border-slate-700 rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-slate-700 transition"><i class="fab fa-google-play text-teal-400"></i> Play Store</a>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 uppercase tracking-tight">Privacy First</h3>
-                    <p class="text-slate-600 leading-relaxed">No data ever leaves your device. All AI processing is done locally via Google ML Kit.</p>
+                </div>
+                <div class="relative bg-[#0a0f1c] flex items-center justify-center p-12 lg:p-0 overflow-hidden order-1 lg:order-2">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-teal-500/10 via-transparent to-blue-500/10 opacity-30"></div>
+                    <img src="./apps/ai-qr-barcode/assets/heropost.png" alt="AI QR Scanner Preview" class="hero-post-img relative z-10 w-full max-w-md transform group-hover:scale-105 transition duration-700">
                 </div>
             </div>
         </div>
-    </section>
 
-    <section id="gallery" class="py-24 bg-slate-50">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold mb-4 uppercase tracking-tighter italic text-slate-800">Experience the Interface</h2>
-                <p class="text-slate-500">A glimpse into our smart, clean, and reliable design.</p>
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+            <div class="p-10 rounded-[3rem] border-2 border-dashed border-slate-200 flex flex-col justify-center">
+                <h4 class="text-xs font-black text-slate-400 uppercase tracking-[0.3em] mb-2">Up Next</h4>
+                <h3 class="text-2xl font-bold text-slate-300">Project: AI Doc Scanner</h3>
+                <p class="text-sm text-slate-400 mt-2 italic leading-relaxed">Applying Big Tech vision algorithms to document digitization. Launching Q3 2026.</p>
             </div>
-            
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <img src="2.png" class="rounded-2xl shadow-md border border-slate-200 hover:scale-105 transition duration-300 bg-black">
-                <img src="3.jpg" class="rounded-2xl shadow-md border border-slate-200 hover:scale-105 transition duration-300">
-                <img src="5.png" class="rounded-2xl shadow-md border border-slate-200 hover:scale-105 transition duration-300 bg-black">
-                <img src="6.jpg" class="rounded-2xl shadow-md border border-slate-200 hover:scale-105 transition duration-300">
-                <img src="7.jpg" class="rounded-2xl shadow-md border border-slate-200 hover:scale-105 transition duration-300">
-                <img src="8.jpg" class="rounded-2xl shadow-md border border-slate-200 hover:scale-105 transition duration-300">
+            <div class="p-10 rounded-[3rem] bg-teal-50 border border-teal-100 flex flex-col justify-center">
+                <h4 class="text-xs font-black text-business uppercase tracking-[0.3em] mb-2">Collaboration</h4>
+                <h3 class="text-2xl font-bold text-slate-800">Have an idea?</h3>
+                <p class="text-sm text-slate-600 mt-2 leading-relaxed mb-6">Write up your amazing idea to <span class="font-bold text-business underline decoration-2">myabhilabs@gmail.com</span>. We provide specialized engineering consulting for product-based startups.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <footer class="py-20 bg-slate-900 text-white border-t border-slate-800">
-        <div class="max-w-6xl mx-auto px-6 text-center">
-            <div class="flex items-center gap-3 justify-center mb-8">
-                <img src="Logo.png" alt="Abhi Labs Logo" class="w-12 h-12 rounded-xl border border-slate-700 p-1 bg-white">
-                <span class="text-2xl font-black tracking-tighter">ABHI LABS</span>
+<footer class="py-20 bg-white border-t border-slate-100">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-12 text-left">
+            <div class="flex items-center gap-4">
+                <img src="./assets/developer_logo.png" alt="Abhi Labs" class="h-10 w-auto">
+                <div>
+                    <h2 class="text-2xl font-black tracking-tighter mb-2 uppercase">ABHI <span class="text-business">LABS</span></h2>
+                    <p class="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400 italic leading-none">Tomorrow's Tech Today</p>
+                </div>
             </div>
-            <p class="text-slate-400 mb-8 max-w-md mx-auto leading-relaxed italic">
-                "Abhi Labs builds simple, smart, and reliable Android apps—bringing tomorrow’s tech to users today."
-            </p>
-            <div class="flex justify-center gap-8 mb-12 text-slate-400 text-sm font-medium">
-                <a href="/app-ads.txt" class="hover:text-white transition underline underline-offset-4 decoration-teal-600">AdMob Verify</a>
-                <a href="/privacy-policy.html" class="hover:text-white transition underline underline-offset-4 decoration-teal-600">Privacy Policy</a>
-                <a href="mailto:support@myabhilabs.com" class="hover:text-white transition underline underline-offset-4 decoration-teal-600">Support</a>
-            </div>
-            <div class="text-xs text-slate-500 uppercase tracking-[0.3em] font-bold">
-                &copy; 2026 Abhi Labs. All rights reserved.
+            <div class="flex gap-10">
+                <a href="./privacy.html" class="text-xs font-bold text-slate-400 uppercase tracking-widest hover:text-business transition">Privacy Policy</a>
+                <a href="./about/index.html" class="text-xs font-bold text-slate-400 uppercase tracking-widest hover:text-business transition">About Us</a>
             </div>
         </div>
-    </footer>
-
+        <div class="mt-20 pt-10 border-t border-slate-100 text-center text-[10px] font-bold text-slate-300 uppercase tracking-[0.3em]">
+            Abhi Labs © 2026 • Bangalore, India
+        </div>
+    </div>
+</footer>
 </body>
 </html>

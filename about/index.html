@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Abhi Labs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --business-teal: #0d9488;
+        }
+        .text-business { color: var(--business-teal); }
+        .bg-business { background-color: var(--business-teal); }
+        .border-business { border-color: var(--business-teal); }
+
+        .gradient-text {
+            background: linear-gradient(to right, #0d9488, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans text-slate-900 antialiased text-left">
+
+<nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="../index.html" class="flex items-center gap-3 hover:opacity-80 transition group">
+            <img src="../assets/developer_logo.png" alt="Abhi Labs" class="h-8 w-auto object-contain">
+            <span class="text-xl font-black text-slate-800 tracking-tighter uppercase">
+                ABHI <span class="text-business">LABS</span>
+            </span>
+        </a>
+        <div class="space-x-8 text-right">
+            <a href="../index.html" class="text-sm font-bold text-slate-600 hover:text-business transition uppercase tracking-widest">Home</a>
+            <a href="../apps/ai-qr-barcode/index.html" class="text-sm font-bold text-slate-600 hover:text-business transition uppercase tracking-widest">Our Apps</a>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <section class="py-24 bg-white border-b border-slate-100">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <span class="text-[10px] font-black uppercase tracking-[0.3em] text-business mb-4 block">Engineered Excellence</span>
+            <h1 class="text-5xl md:text-7xl font-black mb-8 tracking-tight leading-none">
+                <span class="gradient-text uppercase italic">Tomorrow's Tech Today</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-slate-500 leading-relaxed max-w-3xl mx-auto font-light">
+                Abhi Labs builds simple, smart, and reliable Android apps—bringing tomorrow’s tech to users today.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-24">
+        <div class="max-w-7xl mx-auto px-6 text-left">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl font-black mb-8 tracking-tight uppercase">Decades of <span class="text-business">Product Expertise.</span></h2>
+                    <p class="text-lg text-slate-600 mb-6 leading-relaxed italic">
+                        Abhi Labs is an elite software collective of <b>5 developers</b> with a shared history of excellence in global product-based MNCs.
+                    </p>
+                    <p class="text-lg text-slate-600 mb-10 leading-relaxed">
+                        With over <b>15 years of industry experience</b> and specialized focus on <b>Android for more than a decade</b>, we apply high-end engineering standards to every utility we build.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-6 border-t border-slate-200 pt-10 font-mono">
+                        <div class="text-left">
+                            <span class="block text-4xl font-black text-slate-900 italic">15+</span>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Industry Years</span>
+                        </div>
+                        <div class="text-left">
+                            <span class="block text-4xl font-black text-business italic">10+</span>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Android Focus</span>
+                        </div>
+                        <div class="text-left">
+                            <span class="block text-4xl font-black text-slate-900 italic">05</span>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Expert Developers</span>
+                        </div>
+                        <div class="text-left">
+                            <span class="block text-4xl font-black text-business italic">MNC</span>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Product Pedigree</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 rounded-[3rem] p-10 text-white relative overflow-hidden shadow-2xl">
+                    <div class="absolute top-0 right-0 p-10 opacity-10">
+                        <i class="fas fa-code text-9xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-6 flex items-center gap-3 uppercase tracking-tight">
+                        <i class="fas fa-microchip text-teal-400 text-left"></i> Our Benchmarks
+                    </h3>
+                    <ul class="space-y-6">
+                        <li class="flex gap-4">
+                            <i class="fas fa-check-circle text-teal-400 mt-1"></i>
+                            <span class="text-left leading-relaxed"><b>Scale-Ready Performance:</b> Bringing the stability of world-class product cycles to independent mobile apps.</span>
+                        </li>
+                        <li class="flex gap-4">
+                            <i class="fas fa-check-circle text-teal-400 mt-1"></i>
+                            <span class="text-left leading-relaxed"><b>Modern Architecture:</b> Built with Jetpack Compose, Coroutines, and Room DB for ultimate efficiency.</span>
+                        </li>
+                        <li class="flex gap-4">
+                            <i class="fas fa-check-circle text-teal-400 mt-1"></i>
+                            <span class="text-left leading-relaxed"><b>Privacy-First:</b> Engineering for absolute data sovereignty—no cloud, no tracking.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-slate-100 border-y border-slate-200">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-black mb-12 uppercase tracking-widest italic">Core Mission</h2>
+            <div class="grid md:grid-cols-2 gap-12 text-left">
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-200">
+                    <h4 class="text-xl font-bold mb-4 uppercase tracking-tighter">Simplicity</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed">Technology should be invisible. We strip away the noise to leave you with tools that just work, every time.</p>
+                </div>
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-200">
+                    <h4 class="text-xl font-bold mb-4 uppercase tracking-tighter">Reliability</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed">Built by engineers who have managed systems at scale, our apps are crash-resistant and performance-optimized.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="text-center md:text-left flex items-center gap-4">
+            <img src="../assets/developer_logo.png" alt="Abhi Labs" class="h-10 w-auto">
+            <div>
+                <h2 class="text-xl font-black uppercase tracking-tighter">ABHI <span class="text-business">LABS</span></h2>
+                <p class="text-[10px] text-slate-400 mt-1 tracking-[0.3em] font-bold">TOMORROW'S TECH TODAY</p>
+            </div>
+        </div>
+        <div class="flex gap-10 text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">
+            <span class="text-slate-400 select-none italic">Bangalore, India</span>
+        </div>
+    </div>
+    <p class="text-center mt-12 text-[10px] text-slate-300 uppercase tracking-widest font-bold font-mono">Abhi Labs © 2026</p>
+</footer>
+
+</body>
+</html>
