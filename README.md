@@ -25,6 +25,16 @@ The next generation of scanning technology. Beyond a simple reader, our AI engin
 
 [**Download on Google Play**](https://play.google.com/store/apps/details?id=com.abhilabs.aiqrbarcodescanner)
 
+### **AbhiScan: Offline PDF Scanner**
+Professional-grade document digitization built for absolute privacy. Every operation happens locally on your device.
+
+* **📄 Pro Scanner:** 7 smart scan modes including ID Cards, Books (with curve flattening), and Passports.
+* **🔍 Offline OCR:** Full-text search powered by a local SQLite FTS4 engine. No external servers used.
+* **🛠️ PDF Toolkit:** Merge, split, and compress PDFs directly on-device.
+* **🔒 Privacy Sovereign:** Zero cloud uploads. Your documents never leave your phone.
+
+[**Download on Google Play**](https://play.google.com/store/apps/details?id=com.abhilabs.pdfscanner)
+
 ---
 
 ## 🛠️ Verification & Compliance
