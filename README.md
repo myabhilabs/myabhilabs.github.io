@@ -54,7 +54,7 @@ We provide specialized engineering consulting for product-based startups looking
 
 ---
 ## 📄 License
-This project and its assets are protected under the [MIT License](./LICENSE).
+This project and its assets are proprietary. All rights reserved. See the [License](./LICENSE) for full terms and conditions.
 
 ---
 *© 2026 Abhi Labs • Crafted with Big Tech Standards in Bangalore, India*
