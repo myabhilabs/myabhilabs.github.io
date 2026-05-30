@@ -53,4 +53,8 @@ We provide specialized engineering consulting for product-based startups looking
 **Have an amazing idea?** Write to us at: [myabhilabs@gmail.com](mailto:myabhilabs@gmail.com)
 
 ---
+## 📄 License
+This project and its assets are protected under the [MIT License](./LICENSE).
+
+---
 *© 2026 Abhi Labs • Crafted with Big Tech Standards in Bangalore, India*
