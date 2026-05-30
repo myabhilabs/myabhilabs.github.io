@@ -1,23 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../../assets/developer_logo.png">
     <title>Lunavi: Offline Period Tracker | Abhi Labs</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        business: {
+                            DEFAULT: '#e11d48',
+                            dark: '#be123c',
+                            light: '#fb7185',
+                            premium: '#4c0519',
+                        }
+                    },
+                    animation: {
+                        'orb-slow': 'orb 20s infinite linear',
+                        'orb-slower': 'orb 25s infinite linear reverse',
+                    },
+                    keyframes: {
+                        orb: {
+                            '0%': { transform: 'translate(0, 0) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0, 0) scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
+        .hero-mesh {
+            background-color: #020617;
+            background-image:
+                radial-gradient(at 0% 0%, rgba(225, 29, 72, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(59, 130, 246, 0.1) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(225, 29, 72, 0.1) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(59, 130, 246, 0.05) 0px, transparent 50%);
+        }
+
+        .glass-premium {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .text-premium-gradient {
+            background: linear-gradient(135deg, #ffffff 0%, #e11d48 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         .screenshot-gallery::-webkit-scrollbar { height: 6px; }
         .screenshot-gallery::-webkit-scrollbar-thumb { background: #e11d48; border-radius: 10px; }
-        .screenshot-gallery::-webkit-scrollbar-track { background: #fff1f2; }
-
-        :root {
-            --business-rose: #e11d48;
-            --midnight-dark: #0f172a;
-        }
-        .bg-business { background-color: var(--business-rose); }
-        .text-business { color: var(--business-rose); }
+        .screenshot-gallery::-webkit-scrollbar-track { background: #0f172a; }
 
         .screenshot-gallery {
             scroll-snap-type: x mandatory;
@@ -28,217 +88,191 @@
         }
 
         .tech-bg {
-            background: radial-gradient(circle at top right, rgba(225, 29, 72, 0.1), transparent),
+            background: radial-gradient(circle at top right, rgba(225, 29, 72, 0.15), transparent),
                         radial-gradient(circle at bottom left, rgba(59, 130, 246, 0.1), transparent),
-                        #030712;
+                        #020617;
         }
     </style>
 </head>
-<body class="bg-slate-50 font-sans text-slate-900">
+<body class="bg-slate-950 text-white font-sans antialiased text-left">
 
-<nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-        <a href="../../index.html" class="flex items-center gap-3 hover:opacity-80 transition group">
-            <img src="../../assets/developer_logo.png" alt="Abhi Labs" class="h-8 w-auto object-contain">
-            <span class="text-2xl font-black text-slate-800 tracking-tighter uppercase">
-                ABHI <span class="text-business">LABS</span>
-            </span>
-        </a>
-
-        <div class="flex items-center space-x-8 text-right">
-            <a href="https://sites.google.com/view/lunavi-privacypolicy/home" class="text-sm font-bold text-slate-600 hover:text-business transition uppercase tracking-widest">Privacy Policy</a>
-            <a href="https://play.google.com/store/apps/details?id=com.abhilabs.lunavi"
-               class="bg-business text-white px-6 py-2 rounded-full text-xs font-black uppercase tracking-widest hover:opacity-90 transition shadow-lg shadow-rose-900/10">
-                Download
+<nav class="fixed w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <a href="../../index.html" class="flex items-center gap-3 hover:opacity-80 transition group">
+                <img src="../../assets/developer_logo.png" alt="Abhi Labs" class="h-8 w-auto object-contain">
+                <span class="text-2xl font-black tracking-tighter text-white uppercase">ABHI <span class="text-rose-500">LABS</span></span>
+            </a>
+        </div>
+        <div class="flex gap-10 items-center">
+            <a href="https://play.google.com/store/apps/details?id=com.abhilabs.lunavi" target="_blank"
+               class="bg-white text-slate-950 px-6 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-rose-500 hover:text-white transition shadow-lg">
+                Download Now
             </a>
         </div>
     </div>
 </nav>
 
-<header class="container mx-auto px-6 py-12 lg:py-24 flex flex-col lg:flex-row items-center">
-    <div class="lg:w-3/5 text-center lg:text-left text-left">
-        <div class="inline-block px-3 py-1 rounded-full bg-rose-50 border border-rose-100 text-business text-[10px] font-black uppercase tracking-[0.2em] mb-6 text-left">
-            <i class="fas fa-shield-heart mr-2"></i>100% Offline & Private
+<header class="relative pt-48 pb-32 px-6 hero-mesh overflow-hidden text-center border-b border-white/10">
+    <!-- Animated Background Orbs -->
+    <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-rose-500/5 rounded-full blur-[120px] animate-orb-slow"></div>
+    <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-500/5 rounded-full blur-[120px] animate-orb-slower"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10 flex flex-col lg:flex-row items-center gap-20">
+        <div class="lg:w-3/5 text-left">
+            <div class="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full glass-premium border border-white/10 shadow-sm reveal">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-500 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-rose-500"></span>
+                </span>
+                <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">100% Offline Privacy Sovereign</span>
+            </div>
+            <h1 class="text-6xl md:text-8xl font-black text-white leading-[0.85] mb-10 tracking-[-0.04em] uppercase reveal">
+                Period Tracking <br><span class="text-premium-gradient italic text-left">Redefined.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 max-w-xl leading-relaxed mb-12 font-medium reveal">
+                Experience absolute data sovereignty. Lunavi is a 100% offline period tracker built with modern engineering standards and a focus on complete user privacy.
+            </p>
+            <div class="flex flex-wrap gap-6 reveal">
+                <a href="https://play.google.com/store/apps/details?id=com.abhilabs.lunavi" target="_blank" class="hover:scale-105 transition-transform">
+                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16">
+                </a>
+            </div>
         </div>
-        <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight text-slate-900 uppercase tracking-tighter text-left">
-            Your Health Data. <span class="text-business italic">Only Yours.</span>
-        </h1>
-        <p class="text-xl text-slate-600 mb-8 max-w-xl leading-relaxed text-left">
-            Lunavi is a fully offline period and fertility tracker built for privacy. No cloud, no account, no compromise. Every reading stays locally on your device.
-        </p>
-        <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
-            <a href="https://play.google.com/store/apps/details?id=com.abhilabs.lunavi" target="_blank" class="hover:scale-105 transition-transform">
-                <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16">
-            </a>
+        <div class="lg:w-2/5 flex justify-center relative reveal">
+            <div class="absolute inset-0 bg-rose-500/10 blur-[100px] rounded-full"></div>
+            <img src="./assets/applogo.png" alt="Lunavi Icon" class="relative w-72 rounded-[3.5rem] shadow-[0_50px_100px_-20px_rgba(225,29,72,0.3)] border-[12px] border-slate-900 z-10 transform hover:scale-105 transition-transform duration-700">
         </div>
-    </div>
-    <div class="lg:w-2/5 mt-12 lg:mt-0 flex justify-center relative">
-        <div class="absolute inset-0 bg-rose-400/10 blur-[100px] rounded-full"></div>
-        <img src="./assets/applogo.png" alt="Lunavi Hero" class="relative w-72 rounded-[2.5rem] shadow-2xl border-[8px] border-slate-900 z-10 transform hover:-rotate-2 transition-transform duration-500">
     </div>
 </header>
 
-<section class="bg-white py-24 border-y text-left overflow-hidden">
-    <div class="container mx-auto px-6">
-        <div class="mb-16 max-w-2xl">
-            <h2 class="text-4xl lg:text-5xl font-black text-slate-900 uppercase tracking-tighter mb-6">Designed for <br><span class="italic text-business underline decoration-rose-100 underline-offset-8">Total Autonomy</span></h2>
-            <p class="text-lg text-slate-500 font-light leading-relaxed">
-                Most trackers treat privacy as a setting. We treat it as an architectural fact. Lunavi works entirely offline—meaning there is no server to breach and no company to access your data.
-            </p>
-        </div>
-
-        <div class="screenshot-gallery flex overflow-x-auto space-x-6 pb-12 cursor-grab active:cursor-grabbing">
-            <img src="./assets/1.png" class="h-[580px] w-auto rounded-[2.5rem] shadow-2xl snap-center border-4 border-slate-50 hover:scale-[1.02] transition-transform duration-500">
-            <img src="./assets/2.png" class="h-[580px] w-auto rounded-[2.5rem] shadow-2xl snap-center border-4 border-slate-50 hover:scale-[1.02] transition-transform duration-500">
-            <img src="./assets/3.png" class="h-[580px] w-auto rounded-[2.5rem] shadow-2xl snap-center border-4 border-slate-50 hover:scale-[1.02] transition-transform duration-500">
-            <img src="./assets/4.png" class="h-[580px] w-auto rounded-[2.5rem] shadow-2xl snap-center border-4 border-slate-50 hover:scale-[1.02] transition-transform duration-500">
-            <img src="./assets/5.png" class="h-[580px] w-auto rounded-[2.5rem] shadow-2xl snap-center border-4 border-slate-50 hover:scale-[1.02] transition-transform duration-500">
-            <img src="./assets/6.png" class="h-[580px] w-auto rounded-[2.5rem] shadow-2xl snap-center border-4 border-slate-50 hover:scale-[1.02] transition-transform duration-500">
-            <img src="./assets/7.png" class="h-[580px] w-auto rounded-[2.5rem] shadow-2xl snap-center border-4 border-slate-50 hover:scale-[1.02] transition-transform duration-500">
-            <img src="./assets/8.png" class="h-[580px] w-auto rounded-[2.5rem] shadow-2xl snap-center border-4 border-slate-50 hover:scale-[1.02] transition-transform duration-500">
-        </div>
-
-        <div class="flex items-center gap-4 mt-8">
-            <div class="h-[1px] flex-grow bg-slate-100"></div>
-            <span class="text-[10px] font-black uppercase tracking-[0.4em] text-slate-300">Scroll to Explore</span>
-            <div class="h-[1px] flex-grow bg-slate-100"></div>
+<section class="py-32 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="relative rounded-[4rem] overflow-hidden shadow-2xl border border-white/10 reveal">
+            <img src="./assets/heropost.png" alt="Lunavi Features" class="w-full h-auto transform hover:scale-[1.01] transition duration-700">
         </div>
     </div>
 </section>
 
-<section class="py-24 bg-slate-50 relative overflow-hidden text-left">
-    <div class="container mx-auto px-6 relative z-10 text-center">
-        <div class="max-w-3xl mx-auto mb-16 text-left">
-            <div class="inline-flex items-center space-x-2 bg-rose-100/50 border border-rose-200 px-4 py-1.5 rounded-full mb-4 text-business">
-                <i class="fas fa-heart-pulse text-xs"></i>
-                <span class="text-[10px] font-black uppercase tracking-widest">Complete Health Tracking</span>
-            </div>
-            <h2 class="text-4xl lg:text-5xl font-black mb-6 text-slate-900 tracking-tight uppercase text-left">Feature Rich. Server Zero.</h2>
-            <p class="text-lg text-slate-600 leading-relaxed font-light italic text-left">
-                Advanced charting and prediction algorithms run entirely on your hardware.
+<section class="py-32 bg-slate-900 border-y border-white/5 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="mb-20 max-w-2xl text-left reveal">
+            <h2 class="text-4xl md:text-5xl font-black text-white uppercase tracking-tight leading-tight mb-8">Zero Cloud. <br><span class="text-rose-500 italic underline decoration-rose-500/20 underline-offset-8">Total Sovereignty.</span></h2>
+            <p class="text-lg text-slate-400 font-medium leading-relaxed">
+                Your health data belongs to you, not a server. Lunavi processes everything locally on your device with biometric protection and zero tracking.
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
-            <div class="group bg-white p-6 rounded-3xl border border-slate-200 hover:shadow-xl transition-all duration-300">
-                <div class="flex items-center space-x-4 mb-4 text-left">
-                    <div class="w-12 h-12 bg-rose-50 rounded-xl flex items-center justify-center text-rose-600 group-hover:bg-rose-600 group-hover:text-white transition-all"><i class="fas fa-calendar-check text-xl"></i></div>
-                    <h4 class="text-lg font-bold uppercase">Cycle Engine</h4>
-                </div>
-                <p class="text-slate-500 text-xs text-left">Adapts to your rhythm. Precise period and ovulation predictions for regular and irregular cycles.</p>
+        <div class="screenshot-gallery flex overflow-x-auto space-x-8 pb-16 reveal">
+            <img src="./assets/1.png" class="h-[600px] w-auto rounded-[3rem] shadow-2xl snap-center border-4 border-slate-800 hover:scale-[1.02] transition-transform duration-500">
+            <img src="./assets/2.png" class="h-[600px] w-auto rounded-[3rem] shadow-2xl snap-center border-4 border-slate-800 hover:scale-[1.02] transition-transform duration-500">
+            <img src="./assets/3.png" class="h-[600px] w-auto rounded-[3rem] shadow-2xl snap-center border-4 border-slate-800 hover:scale-[1.02] transition-transform duration-500">
+            <img src="./assets/4.png" class="h-[600px] w-auto rounded-[3rem] shadow-2xl snap-center border-4 border-slate-800 hover:scale-[1.02] transition-transform duration-500">
+            <img src="./assets/5.png" class="h-[600px] w-auto rounded-[3rem] shadow-2xl snap-center border-4 border-slate-800 hover:scale-[1.02] transition-transform duration-500">
+            <img src="./assets/6.png" class="h-[600px] w-auto rounded-[3rem] shadow-2xl snap-center border-4 border-slate-800 hover:scale-[1.02] transition-transform duration-500">
+            <img src="./assets/7.png" class="h-[600px] w-auto rounded-[3rem] shadow-2xl snap-center border-4 border-slate-800 hover:scale-[1.02] transition-transform duration-500">
+            <img src="./assets/8.png" class="h-[600px] w-auto rounded-[3rem] shadow-2xl snap-center border-4 border-slate-800 hover:scale-[1.02] transition-transform duration-500">
+        </div>
+    </div>
+</section>
+
+<section class="py-32 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-3xl mb-20 text-left reveal">
+            <div class="inline-flex items-center gap-2 bg-rose-500/10 border border-rose-500/20 px-4 py-2 rounded-full mb-6 text-rose-500">
+                <i class="fas fa-microchip text-xs"></i>
+                <span class="text-[10px] font-black uppercase tracking-widest">Jetpack Compose UI Engine</span>
             </div>
-            <div class="group bg-white p-6 rounded-3xl border border-slate-200 hover:shadow-xl transition-all duration-300">
-                <div class="flex items-center space-x-4 mb-4 text-left">
-                    <div class="w-12 h-12 bg-pink-50 rounded-xl flex items-center justify-center text-pink-600 group-hover:bg-pink-600 group-hover:text-white transition-all"><i class="fas fa-baby text-xl"></i></div>
-                    <h4 class="text-lg font-bold uppercase">TTC Mode</h4>
-                </div>
-                <p class="text-slate-500 text-xs text-left">Trying to conceive? Track BBT charts, cervical mucus, and OPK logs with daily probability guidance.</p>
+            <h2 class="text-4xl md:text-5xl font-black mb-8 text-white tracking-tight uppercase">Privacy Benchmarks</h2>
+            <p class="text-lg text-slate-400 leading-relaxed font-medium italic">
+                Engineering a new standard for sensitive data management on Android.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 reveal">
+            <div class="group p-8 rounded-[2.5rem] border border-white/5 bg-white/5 hover:bg-white/10 hover:shadow-2xl transition-all duration-500">
+                <div class="w-14 h-14 bg-rose-500/20 rounded-2xl shadow-sm flex items-center justify-center text-rose-500 mb-6 group-hover:bg-rose-500 group-hover:text-white transition-all"><i class="fas fa-fingerprint text-2xl"></i></div>
+                <h4 class="text-xl font-black uppercase mb-4 tracking-tight">Security</h4>
+                <p class="text-slate-400 text-sm font-medium leading-relaxed">Integrated biometric locking with an offline reset token and emergency wipe.</p>
             </div>
-            <div class="group bg-white p-6 rounded-3xl border border-slate-200 hover:shadow-xl transition-all duration-300">
-                <div class="flex items-center space-x-4 mb-4 text-left">
-                    <div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center text-purple-600 group-hover:bg-purple-600 group-hover:text-white transition-all"><i class="fas fa-clipboard-list text-xl"></i></div>
-                    <h4 class="text-lg font-bold uppercase">40+ Symptoms</h4>
-                </div>
-                <p class="text-slate-500 text-xs text-left">Log flow intensity, moods, pain, and more. Understand how you feel across your full cycle.</p>
+            <div class="group p-8 rounded-[2.5rem] border border-white/5 bg-white/5 hover:bg-white/10 hover:shadow-2xl transition-all duration-500">
+                <div class="w-14 h-14 bg-rose-500/20 rounded-2xl shadow-sm flex items-center justify-center text-rose-500 mb-6 group-hover:bg-rose-500 group-hover:text-white transition-all"><i class="fas fa-chart-line text-2xl"></i></div>
+                <h4 class="text-xl font-black uppercase mb-4 tracking-tight">Analytics</h4>
+                <p class="text-slate-400 text-sm font-medium leading-relaxed">Monthly length timelines and symptom heatmaps processed entirely locally.</p>
             </div>
-            <div class="group bg-white p-6 rounded-3xl border border-slate-200 hover:shadow-xl transition-all duration-300">
-                <div class="flex items-center space-x-4 mb-4 text-left">
-                    <div class="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-all"><i class="fas fa-fingerprint text-xl"></i></div>
-                    <h4 class="text-lg font-bold uppercase">App Lock</h4>
-                </div>
-                <p class="text-slate-500 text-xs text-left">Biometric and PIN protection with an offline reset token and emergency panic wipe.</p>
+            <div class="group p-8 rounded-[2.5rem] border border-white/5 bg-white/5 hover:bg-white/10 hover:shadow-2xl transition-all duration-500">
+                <div class="w-14 h-14 bg-rose-500/20 rounded-2xl shadow-sm flex items-center justify-center text-rose-500 mb-6 group-hover:bg-rose-500 group-hover:text-white transition-all"><i class="fas fa-cloud-slash text-2xl"></i></div>
+                <h4 class="text-xl font-black uppercase mb-4 tracking-tight">Zero Cloud</h4>
+                <p class="text-slate-400 text-sm font-medium leading-relaxed">No account required. No data leaves the device. Complete health data portability.</p>
             </div>
-            <div class="group bg-white p-6 rounded-3xl border border-slate-200 hover:shadow-xl transition-all duration-300 text-left">
-                <div class="flex items-center space-x-4 mb-4 text-left">
-                    <div class="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center text-orange-600 group-hover:bg-orange-600 group-hover:text-white transition-all"><i class="fas fa-chart-line text-xl"></i></div>
-                    <h4 class="text-lg font-bold uppercase text-left">Analytics</h4>
-                </div>
-                <p class="text-slate-500 text-xs text-left">Monthly length timelines and symptom heatmaps to track shifts over time.</p>
-            </div>
-            <div class="group bg-white p-6 rounded-3xl border border-slate-200 hover:shadow-xl transition-all duration-300 text-left">
-                <div class="flex items-center space-x-4 mb-4 text-left">
-                    <div class="w-12 h-12 bg-teal-50 rounded-xl flex items-center justify-center text-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-all"><i class="fas fa-paint-roller text-xl"></i></div>
-                    <h4 class="text-lg font-bold uppercase">5 Themes</h4>
-                </div>
-                <p class="text-slate-500 text-xs text-left">Luna Rose, Midnight, Forest, Ocean, and High Contrast. Beautiful design, no pink stereotypes.</p>
-            </div>
-            <div class="group bg-white p-6 rounded-3xl border border-slate-200 hover:shadow-xl transition-all duration-300 text-left">
-                <div class="flex items-center space-x-4 mb-4 text-left">
-                    <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all"><i class="fas fa-cloud-slash text-xl"></i></div>
-                    <h4 class="text-lg font-bold uppercase">Zero Cloud</h4>
-                </div>
-                <p class="text-slate-500 text-xs text-left">No account required. No data leaves the device. Complete health data portability via export.</p>
-            </div>
-            <div class="group bg-white p-6 rounded-3xl border border-slate-200 hover:shadow-xl transition-all duration-300 text-left">
-                <div class="flex items-center space-x-4 mb-4 text-left">
-                    <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-all"><i class="fas fa-leaf text-xl"></i></div>
-                    <h4 class="text-lg font-bold uppercase text-left">Ad Free</h4>
-                </div>
-                <p class="text-slate-500 text-xs text-left">No ads, no tracking, and no upsells. Just a clean, professional utility for your health.</p>
+            <div class="group p-8 rounded-[2.5rem] border border-white/5 bg-white/5 hover:bg-white/10 hover:shadow-2xl transition-all duration-500">
+                <div class="w-14 h-14 bg-rose-500/20 rounded-2xl shadow-sm flex items-center justify-center text-rose-500 mb-6 group-hover:bg-rose-500 group-hover:text-white transition-all"><i class="fas fa-leaf text-2xl"></i></div>
+                <h4 class="text-xl font-black uppercase mb-4 tracking-tight">Ad Free</h4>
+                <p class="text-slate-400 text-sm font-medium leading-relaxed">No ads, no tracking, and no upsells. Just a clean, professional health utility.</p>
             </div>
         </div>
     </div>
 </section>
 
-<section class="py-24 tech-bg text-white relative border-t border-slate-800 text-left">
-    <div class="container mx-auto px-6 relative z-10">
-        <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-6 text-left">
+<section class="py-32 tech-bg text-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-20 gap-8 reveal">
             <div class="max-w-2xl text-left">
-                <h2 class="text-4xl md:text-5xl font-black mb-4 tracking-tight uppercase text-left">Technical <span class="text-rose-400 italic text-left">DNA</span></h2>
-                <p class="text-slate-400 font-light text-left">Built with Modern Android Architecture.</p>
+                <h2 class="text-4xl md:text-6xl font-black mb-6 tracking-tight uppercase leading-[0.9]">Technical <br><span class="text-rose-500 italic text-left">DNA</span></h2>
+                <p class="text-slate-400 font-medium text-lg text-left">Built with Modern Android Architecture.</p>
             </div>
-            <div class="flex gap-4 text-left">
-                <div class="px-4 py-2 bg-slate-900 border border-slate-700 rounded-xl text-center">
-                    <span class="block text-xl font-bold text-rose-400">100%</span>
-                    <span class="text-[10px] text-slate-500 uppercase font-black tracking-widest">Offline-First</span>
+            <div class="flex gap-6 reveal">
+                <div class="px-6 py-4 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl text-center">
+                    <span class="block text-3xl font-black text-rose-500 tracking-tighter">100%</span>
+                    <span class="text-[10px] text-slate-500 uppercase font-bold tracking-[0.2em]">Offline-First</span>
                 </div>
-                <div class="px-4 py-2 bg-slate-900 border border-slate-700 rounded-xl text-center">
-                    <span class="block text-xl font-bold text-blue-400">Secure</span>
-                    <span class="text-[10px] text-slate-500 uppercase font-black tracking-widest">Local-Only Enc</span>
+                <div class="px-6 py-4 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl text-center">
+                    <span class="block text-3xl font-black text-blue-400 tracking-tighter">Secure</span>
+                    <span class="text-[10px] text-slate-500 uppercase font-bold tracking-[0.2em]">Encryption</span>
                 </div>
             </div>
         </div>
 
-        <div class="grid lg:grid-cols-3 gap-8 text-left">
-            <div class="space-y-6 text-left">
-                <div class="p-8 bg-slate-900/50 border border-slate-800 rounded-[2rem] hover:border-rose-500/50 transition-all text-left">
-                    <i class="fas fa-code text-rose-400 text-3xl mb-6"></i>
-                    <h3 class="text-xl font-bold mb-3">Modern Stack</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-4 text-left">Declarative UI built with Jetpack Compose, following Clean Architecture and MVVM patterns.</p>
-                    <div><span class="text-[10px] font-mono text-rose-500 bg-rose-500/10 px-2 py-1 rounded">COMPOSE_STABLE_1.7</span></div>
+        <div class="grid lg:grid-cols-3 gap-10 reveal">
+            <div class="space-y-10">
+                <div class="p-10 bg-white/5 backdrop-blur-xl border border-white/10 rounded-[3rem] hover:border-rose-500/50 transition-all duration-500 text-left">
+                    <div class="w-16 h-16 rounded-2xl bg-rose-500/20 flex items-center justify-center text-rose-500 mb-8"><i class="fas fa-code text-3xl"></i></div>
+                    <h3 class="text-2xl font-black mb-4 uppercase tracking-tight">Modern Stack</h3>
+                    <p class="text-slate-400 font-medium leading-relaxed mb-6">Declarative UI built with Jetpack Compose, following Clean Architecture and MVVM patterns.</p>
+                    <span class="text-[10px] font-mono font-bold text-rose-500 bg-rose-500/10 px-3 py-1 rounded-lg">COMPOSE_STABLE_1.7</span>
                 </div>
-                <div class="p-8 bg-slate-900/50 border border-slate-800 rounded-[2rem] hover:border-blue-500/50 transition-all text-left">
-                    <i class="fas fa-database text-blue-400 text-3xl mb-6"></i>
-                    <h3 class="text-xl font-bold mb-3">Local Storage</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed text-left">High-performance Room DB implementation for all cycle records and health symptoms.</p>
+                <div class="p-10 bg-white/5 backdrop-blur-xl border border-white/10 rounded-[3rem] hover:border-blue-500/50 transition-all duration-500 text-left">
+                    <div class="w-16 h-16 rounded-2xl bg-blue-500/20 flex items-center justify-center text-blue-400 mb-8"><i class="fas fa-database text-3xl"></i></div>
+                    <h3 class="text-2xl font-black mb-4 uppercase tracking-tight">Local Storage</h3>
+                    <p class="text-slate-400 font-medium leading-relaxed">High-performance Room DB implementation for all cycle records and health symptoms.</p>
                 </div>
             </div>
 
-            <div class="lg:col-span-2 bg-slate-900/80 border border-slate-700 rounded-[2.5rem] p-8 lg:p-12 relative overflow-hidden text-left">
-                <h3 class="text-2xl font-black mb-10 flex items-center uppercase tracking-tight text-left">
-                    <span class="w-2 h-8 bg-rose-500 rounded-full mr-4 text-left"></span>
+            <div class="lg:col-span-2 bg-slate-900/40 backdrop-blur-xl border border-white/10 rounded-[4rem] p-12 md:p-16 relative overflow-hidden text-left">
+                <h3 class="text-3xl font-black mb-12 flex items-center uppercase tracking-tight">
+                    <span class="w-2 h-10 bg-rose-500 rounded-full mr-6"></span>
                     Architectural Specs
                 </h3>
-                <div class="grid md:grid-cols-2 gap-12 text-left">
-                    <div class="text-left">
-                        <h4 class="text-xs font-black uppercase tracking-[0.2em] text-slate-500 mb-6 flex items-center text-left"><i class="fas fa-layer-group mr-2 text-rose-400 text-left"></i> Core Components</h4>
-                        <div class="flex flex-wrap gap-2 text-left">
-                            <span class="px-3 py-1 bg-slate-800 border border-slate-700 rounded-lg text-[10px] font-mono text-slate-300">DAGGER-HILT</span>
-                            <span class="px-3 py-1 bg-slate-800 border border-slate-700 rounded-lg text-[10px] font-mono text-slate-300">STATEFLOW</span>
-                            <span class="px-3 py-1 bg-slate-800 border border-slate-700 rounded-lg text-[10px] font-mono text-slate-300">VIEWMODELS</span>
-                            <span class="px-3 py-1 bg-slate-800 border border-slate-700 rounded-lg text-[10px] font-mono text-slate-300">REPOSITORIES</span>
-                            <span class="px-3 py-1 bg-slate-800 border border-slate-700 rounded-lg text-[10px] font-mono text-slate-300">USE_CASES</span>
+                <div class="grid md:grid-cols-2 gap-16">
+                    <div>
+                        <h4 class="text-xs font-black uppercase tracking-[0.3em] text-slate-500 mb-10 flex items-center"><i class="fas fa-layer-group mr-4 text-rose-500"></i> Core Components</h4>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-[10px] font-bold text-slate-300 uppercase tracking-widest">Dagger-Hilt</span>
+                            <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-[10px] font-bold text-slate-300 uppercase tracking-widest">StateFlow</span>
+                            <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-[10px] font-bold text-slate-300 uppercase tracking-widest">ViewModels</span>
+                            <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-[10px] font-bold text-slate-300 uppercase tracking-widest">Repositories</span>
+                            <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-[10px] font-bold text-slate-300 uppercase tracking-widest">Use Cases</span>
                         </div>
                     </div>
-                    <div class="text-left">
-                        <h4 class="text-xs font-black uppercase tracking-[0.2em] text-slate-500 mb-6 flex items-center text-left"><i class="fas fa-lock mr-2 text-blue-400 text-left"></i> Security Layer</h4>
-                        <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-left">
-                            <span class="text-[9px] text-slate-400 font-mono text-left italic">BIOMETRIC_API</span>
-                            <span class="text-[9px] text-slate-400 font-mono text-left italic">OFFLINE_RESET_TOKEN</span>
-                            <span class="text-[9px] text-slate-400 font-mono text-left italic">EMERGENCY_WIPE</span>
-                            <span class="text-[9px] text-slate-400 font-mono text-left italic">LOCAL_ONLY_EXPORT</span>
-                            <span class="text-[9px] text-slate-400 font-mono text-left italic">ZERO_ANALYTICS</span>
-                            <span class="text-[9px] text-slate-400 font-mono text-left italic">DISCREET_MODE</span>
+                    <div>
+                        <h4 class="text-xs font-black uppercase tracking-[0.3em] text-slate-500 mb-10 flex items-center"><i class="fas fa-lock mr-4 text-blue-400"></i> Security Layer</h4>
+                        <div class="grid grid-cols-2 gap-x-8 gap-y-4">
+                            <span class="text-[11px] text-slate-400 font-bold uppercase tracking-widest italic">Biometric API</span>
+                            <span class="text-[11px] text-slate-400 font-bold uppercase tracking-widest italic">Offline Reset</span>
+                            <span class="text-[11px] text-slate-400 font-bold uppercase tracking-widest italic">Emergency Wipe</span>
+                            <span class="text-[11px] text-slate-400 font-bold uppercase tracking-widest italic">Local Export</span>
+                            <span class="text-[11px] text-slate-400 font-bold uppercase tracking-widest italic">Zero Analytics</span>
+                            <span class="text-[11px] text-slate-400 font-bold uppercase tracking-widest italic">Discreet Mode</span>
                         </div>
                     </div>
                 </div>
@@ -247,30 +281,49 @@
     </div>
 </section>
 
-<footer class="py-16 bg-white text-center border-t text-left">
-    <div class="container mx-auto px-6 text-left">
-        <div class="flex flex-col md:flex-row justify-between items-center gap-8 text-left">
-            <div class="flex items-center gap-4 text-left">
+<footer class="py-20 bg-slate-950 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-12 text-left">
+            <div class="flex items-center gap-4">
                 <img src="../../assets/developer_logo.png" alt="Abhi Labs" class="h-10 w-auto">
                 <div>
-                    <h2 class="text-2xl font-black tracking-tighter uppercase text-slate-800 text-left">ABHI <span class="text-business text-left">LABS</span></h2>
-                    <p class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 italic text-left">Tomorrow's Tech Today</p>
+                    <h2 class="text-2xl font-black tracking-tighter mb-2 uppercase">ABHI <span class="text-rose-500">LABS</span></h2>
+                    <p class="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400 italic leading-none">Tomorrow's Tech Today</p>
                 </div>
             </div>
-            <div class="flex justify-center space-x-12 text-xs font-black text-slate-400 uppercase tracking-[0.2em] text-left">
-                <a href="../../index.html" class="hover:text-business transition text-left">Home</a>
-                <a href="https://sites.google.com/view/lunavi-privacypolicy/home" class="hover:text-business transition text-left">Privacy Policy</a>
-                <a href="../../LICENSE" class="hover:text-business transition text-left">License</a>
+            <div class="flex gap-10">
+                <a href="../../index.html" class="text-xs font-bold text-slate-400 uppercase tracking-widest hover:text-rose-500 transition">Home</a>
+                <a href="https://sites.google.com/view/lunavi-privacypolicy/home" target="_blank" class="text-xs font-bold text-slate-400 uppercase tracking-widest hover:text-rose-500 transition">Privacy Policy</a>
+                <a href="../../LICENSE" class="text-xs font-bold text-slate-400 uppercase tracking-widest hover:text-rose-500 transition">License</a>
             </div>
         </div>
-        <div class="mt-12 text-center text-[10px] text-slate-300 uppercase tracking-[0.3em] font-mono italic">
-            © 2026 Abhi Labs • Crafted with Big Tech Standards
-            <div class="mt-4 flex justify-center">
-                <img src="https://hits.sh/myabhilabs.github.io/badge.svg?color=0d9488&label=VISITS" alt="Visitor Counter"/>
+        <div class="mt-20 pt-10 border-t border-white/5 text-center text-[10px] font-bold text-slate-600 uppercase tracking-[0.3em]">
+            Abhi Labs © 2026 • Bangalore, India
+            <div class="mt-6 flex justify-center">
+                <img src="https://hits.sh/myabhilabs.github.io/badge.svg?color=e11d48&label=VISITS" alt="Visitor Counter"/>
             </div>
         </div>
     </div>
 </footer>
 
+<script>
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => {
+        observer.observe(el);
+    });
+</script>
 </body>
 </html>
