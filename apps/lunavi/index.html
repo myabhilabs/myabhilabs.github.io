@@ -8,34 +8,26 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
                         sans: ['Plus Jakarta Sans', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
                     },
                     colors: {
                         business: {
-                            DEFAULT: '#0d9488',
-                            dark: '#083344',
-                            light: '#2dd4bf',
-                        },
-                        onyx: {
-                            DEFAULT: '#09090b',
-                            light: '#111114',
-                            muted: '#18181b',
+                            DEFAULT: '#e11d48',
+                            dark: '#be123c',
+                            light: '#fb7185',
+                            premium: '#4c0519',
                         }
                     },
                     animation: {
                         'orb-slow': 'orb 20s infinite linear',
                         'orb-slower': 'orb 25s infinite linear reverse',
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'scanline': 'scanline 10s linear infinite',
                     },
                     keyframes: {
                         orb: {
@@ -43,171 +35,295 @@
                             '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
                             '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
                             '100%': { transform: 'translate(0, 0) scale(1)' },
-                        },
-                        scanline: {
-                            '0%': { transform: 'translateY(-100%)' },
-                            '100%': { transform: 'translateY(100%)' }
                         }
                     }
                 }
             }
         }
     </script>
-
     <style>
-        .cursor-dot { width: 8px; height: 8px; background: #0d9488; position: fixed; top: 0; left: 0; border-radius: 50%; pointer-events: none; z-index: 9999; }
-        .cursor-outline { width: 40px; height: 40px; border: 2px solid rgba(13, 148, 136, 0.3); position: fixed; top: 0; left: 0; border-radius: 50%; pointer-events: none; z-index: 9998; transition: width 0.3s, height 0.3s, border-color 0.3s, background 0.3s; }
-        .cursor-active .cursor-outline { width: 60px; height: 60px; background: rgba(13, 148, 136, 0.1); border-color: rgba(13, 148, 136, 0.6); }
+        .hero-mesh {
+            background-color: #020617;
+            background-image:
+                radial-gradient(at 0% 0%, rgba(225, 29, 72, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(59, 130, 246, 0.1) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(225, 29, 72, 0.1) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(59, 130, 246, 0.05) 0px, transparent 50%);
+        }
 
-        ::selection { background: #0d9488; color: white; }
+        .glass-premium {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
-        /* Laboratory Textures */
-        .noise-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0.04; z-index: 100; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); }
-        .scanline-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 99; background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.1) 50%); background-size: 100% 4px; }
-        .grid-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; opacity: 0.2; background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 0); background-size: 40px 40px; }
+        .text-premium-gradient {
+            background: linear-gradient(135deg, #ffffff 0%, #e11d48 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-        .glass-premium { background: rgba(17, 17, 20, 0.7); backdrop-filter: blur(24px); border: 1px solid rgba(255, 255, 255, 0.05); }
-        .text-premium-gradient { background: linear-gradient(135deg, #fff 0%, #0d9488 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
 
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 1s cubic-bezier(0.22, 1, 0.36, 1); }
-        .reveal.active { opacity: 1; transform: translateY(0); }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-        .card-glow:hover { border-color: rgba(13, 148, 136, 0.3); box-shadow: 0 0 40px rgba(13, 148, 136, 0.1); }
-        .perspective-1000 { perspective: 1000px; }
+        .screenshot-gallery::-webkit-scrollbar { height: 6px; }
+        .screenshot-gallery::-webkit-scrollbar-thumb { background: #e11d48; border-radius: 10px; }
+        .screenshot-gallery::-webkit-scrollbar-track { background: #0f172a; }
 
-        body { opacity: 0; }
+        .screenshot-gallery {
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        .snap-center {
+            scroll-snap-align: center;
+        }
 
-        .bento-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1.5rem; }
-        .bento-item { background: rgba(17, 17, 20, 0.6); border: 1px solid rgba(255, 255, 255, 0.03); border-radius: 2.5rem; transition: all 0.5s ease; position: relative; overflow: hidden; }
-        .bento-item:hover { border-color: rgba(13, 148, 136, 0.2); background: rgba(17, 17, 20, 0.8); }
-
-        .screenshot-gallery::-webkit-scrollbar { height: 4px; }
-        .screenshot-gallery::-webkit-scrollbar-thumb { background: #0d9488; border-radius: 10px; }
+        .tech-bg {
+            background: radial-gradient(circle at top right, rgba(225, 29, 72, 0.15), transparent),
+                        radial-gradient(circle at bottom left, rgba(59, 130, 246, 0.1), transparent),
+                        #020617;
+        }
     </style>
 </head>
-<body class="bg-onyx text-white font-sans antialiased selection:bg-business selection:text-white overflow-x-hidden">
-    <div class="noise-overlay"></div>
-    <div class="scanline-overlay"></div>
-    <div class="grid-overlay"></div>
-    <div class="cursor-dot" id="cursor-dot"></div>
-    <div class="cursor-outline" id="cursor-outline"></div>
+<body class="bg-slate-950 text-white font-sans antialiased text-left">
 
-    <div class="fixed bottom-10 left-10 z-40 hidden xl:block font-mono text-[8px] text-slate-500 uppercase tracking-[0.2em] space-y-2 pointer-events-none">
-        <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-business animate-pulse"></span> ENV: PRODUCTION</div>
-        <div>LOC: 12.9716° N, 77.5946° E</div>
-        <div>SEC: LAYER_7_ENCRYPTED</div>
+<nav class="fixed w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <a href="../../index.html" class="flex items-center gap-3 hover:opacity-80 transition group">
+                <img src="../../assets/developer_logo.png" alt="Abhi Labs" class="h-8 w-auto object-contain">
+                <span class="text-2xl font-black tracking-tighter text-white uppercase">ABHI <span class="text-rose-500">LABS</span></span>
+            </a>
+        </div>
+        <div class="flex gap-10 items-center">
+            <a href="https://play.google.com/store/apps/details?id=com.abhilabs.lunavi" target="_blank"
+               class="bg-white text-slate-950 px-6 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-rose-500 hover:text-white transition shadow-lg">
+                Download Now
+            </a>
+        </div>
     </div>
+</nav>
 
-    <nav class="fixed w-full z-50 bg-onyx/80 backdrop-blur-xl border-b border-white/[0.03]">
-        <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <a href="../../index.html" class="flex items-center gap-4 hover:opacity-80 transition group">
-                    <img src="../../assets/developer_logo.png" alt="Logo" class="h-10 w-auto brightness-110">
-                    <div class="flex flex-col"><span class="text-2xl font-black tracking-tighter uppercase text-white leading-none">ABHI <span class="text-business">LABS</span></span><span class="text-[9px] font-bold text-slate-500 uppercase tracking-[0.3em] mt-1 font-mono">LAB-MODE v3.0</span></div>
+<header class="relative pt-48 pb-32 px-6 hero-mesh overflow-hidden text-center border-b border-white/10">
+    <!-- Animated Background Orbs -->
+    <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-rose-500/5 rounded-full blur-[120px] animate-orb-slow"></div>
+    <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-500/5 rounded-full blur-[120px] animate-orb-slower"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10 flex flex-col lg:flex-row items-center gap-20">
+        <div class="lg:w-3/5 text-left">
+            <div class="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full glass-premium border border-white/10 shadow-sm reveal">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-500 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-rose-500"></span>
+                </span>
+                <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">100% Offline Privacy Sovereign</span>
+            </div>
+            <h1 class="text-6xl md:text-8xl font-black text-white leading-[0.85] mb-10 tracking-[-0.04em] uppercase reveal">
+                Period Tracking <br><span class="text-premium-gradient italic text-left">Redefined.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 max-w-xl leading-relaxed mb-12 font-medium reveal">
+                Experience absolute data sovereignty. Lunavi is a 100% offline period tracker built with modern engineering standards and a focus on complete user privacy.
+            </p>
+            <div class="flex flex-wrap gap-6 reveal">
+                <a href="https://play.google.com/store/apps/details?id=com.abhilabs.lunavi" target="_blank" class="hover:scale-105 transition-transform">
+                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16">
                 </a>
             </div>
-            <div class="flex gap-10 items-center">
-                <a href="https://play.google.com/store/apps/details?id=com.abhilabs.lunavi" target="_blank" class="bg-white text-onyx px-8 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-business hover:text-white transition shadow-2xl">Deploy App</a>
+        </div>
+        <div class="lg:w-2/5 flex justify-center relative reveal">
+            <div class="absolute inset-0 bg-rose-500/10 blur-[100px] rounded-full"></div>
+            <img src="./assets/applogo.png" alt="Lunavi Icon" class="relative w-72 rounded-[3.5rem] shadow-[0_50px_100px_-20px_rgba(225,29,72,0.3)] border-[12px] border-slate-900 z-10 transform hover:scale-105 transition-transform duration-700">
+        </div>
+    </div>
+</header>
+
+<section class="py-32 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="relative rounded-[4rem] overflow-hidden shadow-2xl border border-white/10 reveal">
+            <img src="./assets/heropost.png" alt="Lunavi Features" class="w-full h-auto transform hover:scale-[1.01] transition duration-700">
+        </div>
+    </div>
+</section>
+
+<section class="py-32 bg-slate-900 border-y border-white/5 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="mb-20 max-w-2xl text-left reveal">
+            <h2 class="text-4xl md:text-5xl font-black text-white uppercase tracking-tight leading-tight mb-8">Zero Cloud. <br><span class="text-rose-500 italic underline decoration-rose-500/20 underline-offset-8">Total Sovereignty.</span></h2>
+            <p class="text-lg text-slate-400 font-medium leading-relaxed">
+                Your health data belongs to you, not a server. Lunavi processes everything locally on your device with biometric protection and zero tracking.
+            </p>
+        </div>
+
+        <div class="screenshot-gallery flex overflow-x-auto space-x-8 pb-16 reveal">
+            <img src="./assets/1.png" class="h-[600px] w-auto rounded-[3rem] shadow-2xl snap-center border-4 border-slate-800 hover:scale-[1.02] transition-transform duration-500">
+            <img src="./assets/2.png" class="h-[600px] w-auto rounded-[3rem] shadow-2xl snap-center border-4 border-slate-800 hover:scale-[1.02] transition-transform duration-500">
+            <img src="./assets/3.png" class="h-[600px] w-auto rounded-[3rem] shadow-2xl snap-center border-4 border-slate-800 hover:scale-[1.02] transition-transform duration-500">
+            <img src="./assets/4.png" class="h-[600px] w-auto rounded-[3rem] shadow-2xl snap-center border-4 border-slate-800 hover:scale-[1.02] transition-transform duration-500">
+            <img src="./assets/5.png" class="h-[600px] w-auto rounded-[3rem] shadow-2xl snap-center border-4 border-slate-800 hover:scale-[1.02] transition-transform duration-500">
+            <img src="./assets/6.png" class="h-[600px] w-auto rounded-[3rem] shadow-2xl snap-center border-4 border-slate-800 hover:scale-[1.02] transition-transform duration-500">
+            <img src="./assets/7.png" class="h-[600px] w-auto rounded-[3rem] shadow-2xl snap-center border-4 border-slate-800 hover:scale-[1.02] transition-transform duration-500">
+            <img src="./assets/8.png" class="h-[600px] w-auto rounded-[3rem] shadow-2xl snap-center border-4 border-slate-800 hover:scale-[1.02] transition-transform duration-500">
+        </div>
+    </div>
+</section>
+
+<section class="py-32 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-3xl mb-20 text-left reveal">
+            <div class="inline-flex items-center gap-2 bg-rose-500/10 border border-rose-500/20 px-4 py-2 rounded-full mb-6 text-rose-500">
+                <i class="fas fa-microchip text-xs"></i>
+                <span class="text-[10px] font-black uppercase tracking-widest">Jetpack Compose UI Engine</span>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-black mb-8 text-white tracking-tight uppercase">Privacy Benchmarks</h2>
+            <p class="text-lg text-slate-400 leading-relaxed font-medium italic">
+                Engineering a new standard for sensitive data management on Android.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 reveal">
+            <div class="group p-8 rounded-[2.5rem] border border-white/5 bg-white/5 hover:bg-white/10 hover:shadow-2xl transition-all duration-500">
+                <div class="w-14 h-14 bg-rose-500/20 rounded-2xl shadow-sm flex items-center justify-center text-rose-500 mb-6 group-hover:bg-rose-500 group-hover:text-white transition-all"><i class="fas fa-fingerprint text-2xl"></i></div>
+                <h4 class="text-xl font-black uppercase mb-4 tracking-tight">Security</h4>
+                <p class="text-slate-400 text-sm font-medium leading-relaxed">Integrated biometric locking with an offline reset token and emergency wipe.</p>
+            </div>
+            <div class="group p-8 rounded-[2.5rem] border border-white/5 bg-white/5 hover:bg-white/10 hover:shadow-2xl transition-all duration-500">
+                <div class="w-14 h-14 bg-rose-500/20 rounded-2xl shadow-sm flex items-center justify-center text-rose-500 mb-6 group-hover:bg-rose-500 group-hover:text-white transition-all"><i class="fas fa-chart-line text-2xl"></i></div>
+                <h4 class="text-xl font-black uppercase mb-4 tracking-tight">Analytics</h4>
+                <p class="text-slate-400 text-sm font-medium leading-relaxed">Monthly length timelines and symptom heatmaps processed entirely locally.</p>
+            </div>
+            <div class="group p-8 rounded-[2.5rem] border border-white/5 bg-white/5 hover:bg-white/10 hover:shadow-2xl transition-all duration-500">
+                <div class="w-14 h-14 bg-rose-500/20 rounded-2xl shadow-sm flex items-center justify-center text-rose-500 mb-6 group-hover:bg-rose-500 group-hover:text-white transition-all"><i class="fas fa-cloud-slash text-2xl"></i></div>
+                <h4 class="text-xl font-black uppercase mb-4 tracking-tight">Zero Cloud</h4>
+                <p class="text-slate-400 text-sm font-medium leading-relaxed">No account required. No data leaves the device. Complete health data portability.</p>
+            </div>
+            <div class="group p-8 rounded-[2.5rem] border border-white/5 bg-white/5 hover:bg-white/10 hover:shadow-2xl transition-all duration-500">
+                <div class="w-14 h-14 bg-rose-500/20 rounded-2xl shadow-sm flex items-center justify-center text-rose-500 mb-6 group-hover:bg-rose-500 group-hover:text-white transition-all"><i class="fas fa-leaf text-2xl"></i></div>
+                <h4 class="text-xl font-black uppercase mb-4 tracking-tight">Ad Free</h4>
+                <p class="text-slate-400 text-sm font-medium leading-relaxed">No ads, no tracking, and no upsells. Just a clean, professional health utility.</p>
             </div>
         </div>
-    </nav>
+    </div>
+</section>
 
-    <header class="relative pt-64 pb-32 px-6 overflow-hidden">
-        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-24">
-            <div class="lg:w-3/5 text-left">
-                <div class="inline-flex items-center gap-3 px-5 py-2.5 mb-10 rounded-full glass-premium border border-white/5 shadow-2xl reveal">
-                    <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-business opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-business"></span></span>
-                    <span class="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400">Privacy Sovereign Tracker</span>
-                </div>
-                <h1 class="scramble-text text-7xl md:text-9xl font-black leading-[0.8] mb-12 tracking-[-0.05em] uppercase reveal">Track with <br><span class="text-premium-gradient italic">Freedom.</span></h1>
-                <p class="text-xl md:text-2xl text-slate-400 max-w-xl leading-relaxed mb-16 font-medium reveal">A 100% offline cycle intelligence platform. Your biological data, hosted exclusively on your hardware.</p>
+<section class="py-32 tech-bg text-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-20 gap-8 reveal">
+            <div class="max-w-2xl text-left">
+                <h2 class="text-4xl md:text-6xl font-black mb-6 tracking-tight uppercase leading-[0.9]">Technical <br><span class="text-rose-500 italic text-left">DNA</span></h2>
+                <p class="text-slate-400 font-medium text-lg text-left">Built with Modern Android Architecture.</p>
             </div>
-            <div class="lg:w-2/5 flex justify-center reveal">
-                <img src="./assets/applogo.png" alt="Icon" class="w-80 rounded-[4rem] shadow-[0_0_100px_rgba(225,29,72,0.1)] border-[16px] border-white/[0.03] transform hover:scale-105 transition-transform duration-1000">
-            </div>
-        </div>
-    </header>
-
-    <section class="py-48 bg-onyx-light border-y border-white/[0.03] overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-32 max-w-3xl text-left reveal">
-                <h2 class="scramble-text text-5xl md:text-7xl font-black uppercase tracking-tighter mb-10 leading-none">Zero Cloud <br><span class="text-business italic">Engineering.</span></h2>
-                <p class="text-xl text-slate-400 font-medium leading-relaxed">Lunavi utilizes Room DB and local encryption layers to ensure your sensitive health metrics never leave the silicon of your device.</p>
-            </div>
-
-            <div class="screenshot-gallery flex overflow-x-auto space-x-12 pb-24 reveal">
-                <img src="./assets/1.png" class="h-[700px] rounded-[4rem] shadow-2xl border-4 border-white/[0.03] hover:scale-[1.02] transition-all duration-700">
-                <img src="./assets/2.png" class="h-[700px] rounded-[4rem] shadow-2xl border-4 border-white/[0.03] hover:scale-[1.02] transition-all duration-700">
-                <img src="./assets/3.png" class="h-[700px] rounded-[4rem] shadow-2xl border-4 border-white/[0.03] hover:scale-[1.02] transition-all duration-700">
-                <img src="./assets/4.png" class="h-[700px] rounded-[4rem] shadow-2xl border-4 border-white/[0.03] hover:scale-[1.02] transition-all duration-700">
-                <img src="./assets/5.png" class="h-[700px] rounded-[4rem] shadow-2xl border-4 border-white/[0.03] hover:scale-[1.02] transition-all duration-700">
-                <img src="./assets/6.png" class="h-[700px] rounded-[4rem] shadow-2xl border-4 border-white/[0.03] hover:scale-[1.02] transition-all duration-700">
-                <img src="./assets/7.png" class="h-[700px] rounded-[4rem] shadow-2xl border-4 border-white/[0.03] hover:scale-[1.02] transition-all duration-700">
-                <img src="./assets/8.png" class="h-[700px] rounded-[4rem] shadow-2xl border-4 border-white/[0.03] hover:scale-[1.02] transition-all duration-700">
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-48 reveal">
-                <div class="group p-10 rounded-[3rem] glass-premium border border-white/5 hover:border-business/30 transition-all duration-500">
-                    <div class="w-14 h-14 bg-business/10 rounded-2xl flex items-center justify-center text-business mb-8 group-hover:bg-business group-hover:text-white transition-all"><i class="fas fa-fingerprint text-2xl"></i></div>
-                    <h4 class="text-xl font-black uppercase mb-4 tracking-tight">Security</h4>
-                    <p class="text-slate-400 text-sm font-medium leading-relaxed">Integrated biometric locking with an offline reset token.</p>
+            <div class="flex gap-6 reveal">
+                <div class="px-6 py-4 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl text-center">
+                    <span class="block text-3xl font-black text-rose-500 tracking-tighter">100%</span>
+                    <span class="text-[10px] text-slate-500 uppercase font-bold tracking-[0.2em]">Offline-First</span>
                 </div>
-                <div class="group p-10 rounded-[3rem] glass-premium border border-white/5 hover:border-business/30 transition-all duration-500">
-                    <div class="w-14 h-14 bg-business/10 rounded-2xl flex items-center justify-center text-business mb-8 group-hover:bg-business group-hover:text-white transition-all"><i class="fas fa-chart-line text-2xl"></i></div>
-                    <h4 class="text-xl font-black uppercase mb-4 tracking-tight">Analytics</h4>
-                    <p class="text-slate-400 text-sm font-medium leading-relaxed">Cycle timelines and symptom heatmaps processed locally.</p>
-                </div>
-                <div class="group p-10 rounded-[3rem] glass-premium border border-white/5 hover:border-business/30 transition-all duration-500">
-                    <div class="w-14 h-14 bg-business/10 rounded-2xl flex items-center justify-center text-business mb-8 group-hover:bg-business group-hover:text-white transition-all"><i class="fas fa-cloud-slash text-2xl"></i></div>
-                    <h4 class="text-xl font-black uppercase mb-4 tracking-tight">Zero Cloud</h4>
-                    <p class="text-slate-400 text-sm font-medium leading-relaxed">No account required. Complete health data portability.</p>
-                </div>
-                <div class="group p-10 rounded-[3rem] glass-premium border border-white/5 hover:border-business/30 transition-all duration-500">
-                    <div class="w-14 h-14 bg-business/10 rounded-2xl flex items-center justify-center text-business mb-8 group-hover:bg-business group-hover:text-white transition-all"><i class="fas fa-leaf text-2xl"></i></div>
-                    <h4 class="text-xl font-black uppercase mb-4 tracking-tight">Ad Free</h4>
-                    <p class="text-slate-400 text-sm font-medium leading-relaxed">No tracking, no upsells. Pure professional health utility.</p>
+                <div class="px-6 py-4 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl text-center">
+                    <span class="block text-3xl font-black text-blue-400 tracking-tighter">Secure</span>
+                    <span class="text-[10px] text-slate-500 uppercase font-bold tracking-[0.2em]">Encryption</span>
                 </div>
             </div>
         </div>
-    </section>
 
-    <footer class="py-32 bg-onyx border-t border-white/[0.03]">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-start gap-16 mb-32">
-                <div class="flex items-center gap-6">
-                    <img src="../../assets/developer_logo.png" alt="Logo" class="h-16 w-auto">
-                    <div class="text-left">
-                        <h2 class="text-3xl font-black tracking-tighter uppercase text-white leading-none">ABHI <span class="text-business">LABS</span></h2>
-                        <p class="text-[11px] font-black uppercase tracking-[0.5em] text-slate-500 italic mt-3 font-mono">ENGINEERING SOVEREIGNTY</p>
+        <div class="grid lg:grid-cols-3 gap-10 reveal">
+            <div class="space-y-10">
+                <div class="p-10 bg-white/5 backdrop-blur-xl border border-white/10 rounded-[3rem] hover:border-rose-500/50 transition-all duration-500 text-left">
+                    <div class="w-16 h-16 rounded-2xl bg-rose-500/20 flex items-center justify-center text-rose-500 mb-8"><i class="fas fa-code text-3xl"></i></div>
+                    <h3 class="text-2xl font-black mb-4 uppercase tracking-tight">Modern Stack</h3>
+                    <p class="text-slate-400 font-medium leading-relaxed mb-6">Declarative UI built with Jetpack Compose, following Clean Architecture and MVVM patterns.</p>
+                    <span class="text-[10px] font-mono font-bold text-rose-500 bg-rose-500/10 px-3 py-1 rounded-lg">COMPOSE_STABLE_1.7</span>
+                </div>
+                <div class="p-10 bg-white/5 backdrop-blur-xl border border-white/10 rounded-[3rem] hover:border-blue-500/50 transition-all duration-500 text-left">
+                    <div class="w-16 h-16 rounded-2xl bg-blue-500/20 flex items-center justify-center text-blue-400 mb-8"><i class="fas fa-database text-3xl"></i></div>
+                    <h3 class="text-2xl font-black mb-4 uppercase tracking-tight">Local Storage</h3>
+                    <p class="text-slate-400 font-medium leading-relaxed">High-performance Room DB implementation for all cycle records and health symptoms.</p>
+                </div>
+            </div>
+
+            <div class="lg:col-span-2 bg-slate-900/40 backdrop-blur-xl border border-white/10 rounded-[4rem] p-12 md:p-16 relative overflow-hidden text-left">
+                <h3 class="text-3xl font-black mb-12 flex items-center uppercase tracking-tight">
+                    <span class="w-2 h-10 bg-rose-500 rounded-full mr-6"></span>
+                    Architectural Specs
+                </h3>
+                <div class="grid md:grid-cols-2 gap-16">
+                    <div>
+                        <h4 class="text-xs font-black uppercase tracking-[0.3em] text-slate-500 mb-10 flex items-center"><i class="fas fa-layer-group mr-4 text-rose-500"></i> Core Components</h4>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-[10px] font-bold text-slate-300 uppercase tracking-widest">Dagger-Hilt</span>
+                            <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-[10px] font-bold text-slate-300 uppercase tracking-widest">StateFlow</span>
+                            <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-[10px] font-bold text-slate-300 uppercase tracking-widest">ViewModels</span>
+                            <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-[10px] font-bold text-slate-300 uppercase tracking-widest">Repositories</span>
+                            <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-[10px] font-bold text-slate-300 uppercase tracking-widest">Use Cases</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-black uppercase tracking-[0.3em] text-slate-500 mb-10 flex items-center"><i class="fas fa-lock mr-4 text-blue-400"></i> Security Layer</h4>
+                        <div class="grid grid-cols-2 gap-x-8 gap-y-4">
+                            <span class="text-[11px] text-slate-400 font-bold uppercase tracking-widest italic">Biometric API</span>
+                            <span class="text-[11px] text-slate-400 font-bold uppercase tracking-widest italic">Offline Reset</span>
+                            <span class="text-[11px] text-slate-400 font-bold uppercase tracking-widest italic">Emergency Wipe</span>
+                            <span class="text-[11px] text-slate-400 font-bold uppercase tracking-widest italic">Local Export</span>
+                            <span class="text-[11px] text-slate-400 font-bold uppercase tracking-widest italic">Zero Analytics</span>
+                            <span class="text-[11px] text-slate-400 font-bold uppercase tracking-widest italic">Discreet Mode</span>
+                        </div>
                     </div>
                 </div>
-                <div class="grid grid-cols-2 gap-24 font-mono">
-                    <div class="flex flex-col gap-6">
-                        <span class="text-[10px] font-black uppercase tracking-widest text-white">Engineering</span>
-                        <a href="../../index.html" class="text-[10px] font-bold text-slate-500 uppercase tracking-widest hover:text-business transition">Terminal</a>
-                        <a href="../../index.html#apps" class="text-[10px] font-bold text-slate-500 uppercase tracking-widest hover:text-business transition">Registry</a>
-                    </div>
-                    <div class="flex flex-col gap-6">
-                        <span class="text-[10px] font-black uppercase tracking-widest text-white">Legal</span>
-                        <a href="../../LICENSE" class="text-[10px] font-bold text-slate-500 uppercase tracking-widest hover:text-business transition">Proprietary</a>
-                        <a href="mailto:myabhilabs@gmail.com" class="text-[10px] font-bold text-slate-500 uppercase tracking-widest hover:text-business transition">Compliance</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pt-12 border-t border-white/[0.03] flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] font-black text-slate-600 uppercase tracking-[0.4em] font-mono">
-                <div class="flex items-center gap-6">
-                    <span>Abhi Labs © 2026 • BGLR</span>
-                    <span class="text-business animate-pulse">// SYSTEM_ONLINE</span>
-                </div>
-                <div class="flex items-center gap-6">
-                    <span>DATA_ISOLATION: 100%</span>
-                    <img src="https://hits.sh/myabhilabs.github.io/badge.svg?color=0d9488&label=VISITS" alt="Visits" class="opacity-50 hover:opacity-100 transition-opacity"/>
-                </div>
             </div>
         </div>
-    </footer>
+    </div>
+</section>
 
-<script src="../../assets/js/elite.js"></script>
+<footer class="py-20 bg-slate-950 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-12 text-left">
+            <div class="flex items-center gap-4">
+                <img src="../../assets/developer_logo.png" alt="Abhi Labs" class="h-10 w-auto">
+                <div>
+                    <h2 class="text-2xl font-black tracking-tighter mb-2 uppercase">ABHI <span class="text-rose-500">LABS</span></h2>
+                    <p class="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400 italic leading-none">Tomorrow's Tech Today</p>
+                </div>
+            </div>
+            <div class="flex gap-10">
+                <a href="../../index.html" class="text-xs font-bold text-slate-400 uppercase tracking-widest hover:text-rose-500 transition">Home</a>
+                <a href="https://sites.google.com/view/lunavi-privacypolicy/home" target="_blank" class="text-xs font-bold text-slate-400 uppercase tracking-widest hover:text-rose-500 transition">Privacy Policy</a>
+                <a href="../../LICENSE" class="text-xs font-bold text-slate-400 uppercase tracking-widest hover:text-rose-500 transition">License</a>
+            </div>
+        </div>
+        <div class="mt-20 pt-10 border-t border-white/5 text-center text-[10px] font-bold text-slate-600 uppercase tracking-[0.3em]">
+            Abhi Labs © 2026 • Bangalore, India
+            <div class="mt-6 flex justify-center">
+                <img src="https://hits.sh/myabhilabs.github.io/badge.svg?color=e11d48&label=VISITS" alt="Visitor Counter"/>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => {
+        observer.observe(el);
+    });
+</script>
 </body>
 </html>
