@@ -317,6 +317,7 @@
 }
 .phone-mockup--hero .phone-mockup__frame {
   animation: phone-float 3s ease-in-out infinite;
+  filter: drop-shadow(0 50px 100px rgba(13,148,136,0.35));
   filter: drop-shadow(0 50px 100px color-mix(in srgb, var(--accent) 35%, transparent));
 }
 @media (prefers-reduced-motion: reduce) {
@@ -329,15 +330,18 @@
 /* Card phone — tilted, un-tilts on card hover */
 .phone-mockup--card .phone-mockup__frame {
   transform: perspective(600px) rotateY(-12deg) rotateX(4deg);
+  filter: drop-shadow(0 20px 40px rgba(13,148,136,0.20));
   filter: drop-shadow(0 20px 40px color-mix(in srgb, var(--accent) 20%, transparent));
 }
 .app-card:hover .phone-mockup--card .phone-mockup__frame {
   transform: perspective(600px) rotateY(0deg) rotateX(0deg) scale(1.04);
+  filter: drop-shadow(0 30px 60px rgba(13,148,136,0.40));
   filter: drop-shadow(0 30px 60px color-mix(in srgb, var(--accent) 40%, transparent));
 }
 
 /* Sticky phone (GSAP controls, no CSS transform/animation) */
 .phone-mockup--sticky .phone-mockup__frame {
+  filter: drop-shadow(0 40px 80px rgba(13,148,136,0.30));
   filter: drop-shadow(0 40px 80px color-mix(in srgb, var(--accent) 30%, transparent));
 }
 
@@ -420,11 +424,12 @@
 .app-card--featured { padding: 2.5rem; }
 
 /* Hover world-shift */
-.app-card:hover { background: color-mix(in srgb, var(--accent) 10%, var(--bg)); }
+.app-card:hover { background: rgba(13,148,136,0.10); background: color-mix(in srgb, var(--accent) 10%, var(--bg)); }
 .app-card:hover .app-card__border-glow { opacity: 1; }
 
 .app-card__border-glow {
   position: absolute; inset: 0;
+  border: 1px solid rgba(13,148,136,0.40);
   border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
   border-radius: inherit;
   opacity: 0;
@@ -444,7 +449,9 @@
   font-size: 10px; font-weight: 700;
   text-transform: uppercase; letter-spacing: 0.1em;
   color: var(--accent);
+  background: rgba(13,148,136,0.12);
   background: color-mix(in srgb, var(--accent) 12%, transparent);
+  border: 1px solid rgba(13,148,136,0.20);
   border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
   border-radius: 100px;
   padding: 3px 10px;
@@ -649,7 +656,9 @@
   font-family: ui-monospace, 'Courier New', monospace;
   font-size: 11px; font-weight: 700;
   color: var(--accent);
+  background: rgba(13,148,136,0.10);
   background: color-mix(in srgb, var(--accent) 10%, transparent);
+  border: 1px solid rgba(13,148,136,0.20);
   border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
   border-radius: 4px;
   padding: 3px 8px; margin-top: 1rem;
@@ -693,7 +702,9 @@
 
 /* ── Download CTA ──────────────────────────────────── */
 .download-cta {
+  background: rgba(13,148,136,0.08);
   background: color-mix(in srgb, var(--accent) 8%, var(--bg));
+  border-top: 1px solid rgba(13,148,136,0.20);
   border-top: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
   padding: 6rem 2rem;
   text-align: center;
