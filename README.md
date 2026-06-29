@@ -45,6 +45,16 @@ We apply the same rigor found in world-class consumer products to every line of 
 
 ---
 
+### 🌙 **AbhiNidra: Sleep & White Noise**
+*Deep sleep Sanskrit for modern rest.*
+- **🧠 Adaptive Audio:** Real-time environmental noise masking via on-device edge processing.
+- **⚙️ Ritual Engine:** Automated wind-down sequences including sound, breathing, and system triggers.
+- **📓 Private Journal:** 100% offline sleep tracking and dream journal with biometric security.
+- **🌊 India Collection:** Exclusive hi-fi recordings of monsoon rain, temple bells, and village nights.
+- [**Explore Landing Page**](./apps/abhinidra/index.html) • [**Download on Google Play**](https://play.google.com/store/apps/details?id=com.abhilabs.abhinidra)
+
+---
+
 ### 🪶 **AbhiScan Lite**
 *The lightweight, high-speed scanner for every device.*
 - **📦 Ultra-Lean:** Full-featured scanning engine in **under 5MB**.
