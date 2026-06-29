@@ -46,28 +46,49 @@
     <p class="updated">AbhiScan Pro · Last updated: June 2026</p>
 
     <h2>Summary</h2>
-    <p>AbhiScan Pro does not collect, transmit, or store any personal data. All scanning, OCR, and PDF generation happens locally on your device.</p>
+    <p>AbhiScan Pro is built on a local-first architecture. Your scanned documents, PDFs, and extracted text never leave your device unless you explicitly share them. We do not own, operate, or rent servers to store your documents.</p>
 
     <h2>Data We Collect</h2>
-    <p>We collect <strong>no personal data</strong>. Specifically:</p>
+    <p>We do not collect personal data. No account is required to use AbhiScan Pro. The following clarifies exactly what stays on your device:</p>
     <ul>
-      <li>No account is required</li>
-      <li>No analytics or crash reporting SDKs</li>
-      <li>No advertising networks</li>
-      <li>No data transmitted to any server</li>
+      <li>Scanned images are processed locally using OpenCV edge detection</li>
+      <li>OCR text extraction is stored in a local SQLite FTS4 database on your device</li>
+      <li>Generated PDF files are saved via the Android Storage Access Framework at your direction</li>
+      <li>No data is transmitted to any server we operate</li>
     </ul>
 
     <h2>Camera Permission</h2>
-    <p>AbhiScan Pro requests camera access solely to scan documents. Camera images are processed locally and never transmitted.</p>
+    <p>AbhiScan Pro requests camera access solely to scan documents. All image processing — edge detection, perspective correction, contrast enhancement — happens on-device. Camera images are never transmitted to any server.</p>
 
     <h2>Storage Permission</h2>
-    <p>PDF files are saved to your device's local storage at your direction. We do not access any other files on your device.</p>
+    <p>PDF files and scanned images are saved to your device's local storage via the Android Storage Access Framework. We access only the files you explicitly open or save through the app.</p>
 
-    <h2>Data Retention</h2>
-    <p>Your scanned documents remain on your device until you delete them. Uninstalling the app removes all app data.</p>
+    <h2>Advertising</h2>
+    <p>AbhiScan Pro displays ads via <strong>Google AdMob</strong>. AdMob may collect device identifiers (Android Advertising ID), IP address, and ad interaction data to measure ad performance and serve relevant ads.</p>
+    <ul>
+      <li><strong>EEA &amp; UK users:</strong> A consent form is presented at first launch via Google's User Messaging Platform (UMP). Personalized ads require your explicit consent.</li>
+      <li><strong>California residents:</strong> You can opt out of personalized ads by resetting your Advertising ID in Android Settings → Privacy → Ads.</li>
+      <li>You can review Google's privacy policy at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</li>
+    </ul>
+
+    <h2>Crash Reporting</h2>
+    <p>Anonymized crash reports are collected via Google Play Vitals and Firebase Crashlytics to help us fix bugs. These reports contain device model, OS version, and stack traces — never your documents, scanned text, or personal data.</p>
+
+    <h2>Your Rights</h2>
+    <p><strong>EEA &amp; UK (GDPR):</strong> You have the right to access, correct, or delete your data; to withdraw advertising consent at any time; and to lodge a complaint with your local data protection authority.</p>
+    <p><strong>California (CCPA/CPRA):</strong> You have the right to know what data is collected about you, to opt out of the sale of personal information (we do not sell data), and to request deletion of data held by our advertising partners.</p>
+
+    <h2>Data Deletion</h2>
+    <p>Since AbhiScan Pro stores everything locally, you are in full control:</p>
+    <ul>
+      <li>Delete individual scans or PDFs directly within the app</li>
+      <li>Clear all app data via Android Settings → Apps → AbhiScan Pro → Storage → Clear Data</li>
+      <li>Uninstall the app to remove all app data permanently</li>
+    </ul>
+    <p>There is no remote account to delete. For advertising data held by Google, reset your Android Advertising ID in Settings → Privacy → Ads.</p>
 
     <h2>Contact</h2>
-    <p>Questions? Email us at <a href="mailto:contact@abhilabs.app">contact@abhilabs.app</a>.</p>
+    <p>Questions or privacy requests? Email us at <a href="mailto:contact@abhilabs.app">contact@abhilabs.app</a>.</p>
   </div>
 </main>
 <footer class="site-footer" role="contentinfo">

@@ -46,25 +46,51 @@
     <p class="updated">AbhiNidra · Last updated: June 2026</p>
 
     <h2>Summary</h2>
-    <p>AbhiNidra does not collect, transmit, or store any personal data. All audio playback happens locally on your device.</p>
+    <p>Your sleep is private. AbhiNidra is designed with an offline-first architecture — your data stays on your device and is never sold. We do not own, operate, or rent servers for user data storage.</p>
 
     <h2>Data We Collect</h2>
-    <p>We collect <strong>no personal data</strong>. Specifically:</p>
+    <p>We do not collect personal data. Specifically, AbhiNidra does not gather:</p>
     <ul>
-      <li>No account is required</li>
-      <li>No analytics or crash reporting SDKs</li>
-      <li>No advertising networks</li>
-      <li>No data transmitted to any server</li>
+      <li>Personal identifiers (name, email, phone number)</li>
+      <li>Location data</li>
+      <li>Usage analytics</li>
+      <li>Health or sleep quality information</li>
+      <li>Audio recordings of any kind</li>
+    </ul>
+    <p>No account is required. The service operates without servers for user data storage.</p>
+
+    <h2>Microphone Permission (Adaptive Volume)</h2>
+    <p>The optional <strong>Adaptive Volume</strong> feature uses your microphone to detect ambient noise levels and automatically adjust playback volume. Audio is processed locally in real time — the decibel level is calculated on-device and the audio buffer is <strong>discarded immediately after the calculation completes, within milliseconds</strong>. No audio is ever recorded, stored, or transmitted.</p>
+    <p>If you do not enable Adaptive Volume, microphone access is never requested.</p>
+
+    <h2>Local Storage</h2>
+    <p>Custom sound presets, sleep journal entries, and sleep session history are stored exclusively on your device. This data is deleted permanently when you uninstall the app. The developer has no ability to access it.</p>
+
+    <h2>Background Services</h2>
+    <p>AbhiNidra runs two foreground services, both displaying persistent notifications as required by Android:</p>
+    <ul>
+      <li><strong>Media Playback Service:</strong> Keeps sleep sounds playing when the screen is off</li>
+      <li><strong>Microphone Monitoring Service:</strong> Active only when Adaptive Volume is enabled; monitors ambient noise level to adjust volume</li>
+    </ul>
+    <p>These services operate entirely on-device and do not transmit any data.</p>
+
+    <h2>Advertising</h2>
+    <p>AbhiNidra displays ads via <strong>Google AdMob</strong>. Ads appear in menus and navigation screens only — <strong>never during active sleep sessions or audio playback</strong>. AdMob may collect device identifiers (Android Advertising ID) and IP address to serve and measure ads.</p>
+    <ul>
+      <li><strong>EEA &amp; UK users:</strong> A consent form is presented at first launch via Google's User Messaging Platform (UMP). Personalized ads require your explicit consent.</li>
+      <li><strong>California residents:</strong> You can opt out of personalized ads by resetting your Advertising ID in Android Settings → Privacy → Ads.</li>
+      <li>You can review Google's privacy policy at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</li>
     </ul>
 
-    <h2>Audio Playback</h2>
-    <p>AbhiNidra requests audio permissions solely to play sleep sounds and white noise through your device speakers or headphones. No audio is recorded or transmitted.</p>
+    <h2>Your Rights</h2>
+    <p><strong>EEA &amp; UK (GDPR):</strong> You have the right to access, correct, or delete your data; to withdraw advertising consent at any time; and to lodge a complaint with your local data protection authority.</p>
+    <p><strong>California (CCPA/CPRA):</strong> You have the right to know what data is collected about you, to opt out of the sale of personal information (we do not sell data), and to request deletion of data held by our advertising partners.</p>
 
-    <h2>Data Retention</h2>
-    <p>AbhiNidra stores your preferences locally on your device. Uninstalling the app removes all app data.</p>
+    <h2>Children</h2>
+    <p>AbhiNidra is not directed at children under 13. The app includes baby and infant sleep sound content intended for use by parents and caregivers. The offline-first design means no data from any user — including children — is collected or transmitted.</p>
 
     <h2>Contact</h2>
-    <p>Questions? Email us at <a href="mailto:contact@abhilabs.app">contact@abhilabs.app</a>.</p>
+    <p>Questions or privacy requests? Email us at <a href="mailto:contact@abhilabs.app">contact@abhilabs.app</a>.</p>
   </div>
 </main>
 <footer class="site-footer" role="contentinfo">

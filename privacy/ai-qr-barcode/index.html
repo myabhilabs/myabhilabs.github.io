@@ -43,28 +43,58 @@
 <main id="main-content">
   <div class="prose-page">
     <h1>Privacy Policy</h1>
-    <p class="updated">AI QR Barcode · Last updated: June 2026</p>
+    <p class="updated">AI QR Barcode Scanner · Last updated: June 2026</p>
 
     <h2>Summary</h2>
-    <p>AI QR Barcode does not collect, transmit, or store any personal data. All scanning happens locally on your device.</p>
+    <p>AI QR Barcode Scanner is built on a local-first architecture. All data you scan, create, or mark as a favourite is stored strictly locally on your device's internal database. No external servers maintain your scan history or images.</p>
 
     <h2>Data We Collect</h2>
-    <p>We collect <strong>no personal data</strong>. Specifically:</p>
+    <p>We do not collect personal data. No account is required. The following clarifies what stays on your device:</p>
     <ul>
-      <li>No account is required</li>
-      <li>No analytics or crash reporting SDKs</li>
-      <li>No advertising networks</li>
-      <li>No data transmitted to any server</li>
+      <li>Scan history, favourites, and created QR codes are stored in a local on-device database</li>
+      <li>QR code safety verification uses Google ML Kit entirely on-device — no data is sent to external servers</li>
+      <li>No data is transmitted to any server we operate</li>
     </ul>
 
     <h2>Camera Permission</h2>
-    <p>AI QR Barcode requests camera access solely to scan QR codes and barcodes. Camera images are processed locally and never transmitted.</p>
+    <p>AI QR Barcode Scanner requests camera access solely to scan QR codes and barcodes. All image processing happens on-device. Camera frames are never transmitted to any server.</p>
 
-    <h2>Data Retention</h2>
-    <p>Scan results remain on your device until you delete them. Uninstalling the app removes all app data.</p>
+    <h2>Location Permission</h2>
+    <p>Android requires location permission to facilitate connecting to WiFi networks when you scan a WiFi QR code. This permission is used solely for that purpose — we do not track your location, store it, or transmit it.</p>
+
+    <h2>Other Permissions</h2>
+    <ul>
+      <li><strong>WiFi State:</strong> Required to read network information when connecting via a scanned WiFi QR code</li>
+      <li><strong>Vibration:</strong> Used to provide haptic feedback on successful scans</li>
+      <li><strong>Internet:</strong> Required for displaying ads via Google AdMob</li>
+    </ul>
+
+    <h2>On-Device Safety Verification</h2>
+    <p>Scanned URLs and codes are verified for safety using <strong>Google ML Kit</strong>, which processes and verifies codes entirely on your device. No scanned content is sent to external servers for verification.</p>
+
+    <h2>Advertising</h2>
+    <p>AI QR Barcode Scanner displays ads via <strong>Google AdMob</strong>. AdMob may collect device identifiers (Android Advertising ID), IP address, and ad interaction data to measure ad performance and serve relevant ads.</p>
+    <ul>
+      <li><strong>EEA &amp; UK users:</strong> A consent form is presented at first launch via Google's User Messaging Platform (UMP). Personalized ads require your explicit consent.</li>
+      <li><strong>California residents:</strong> You can opt out of personalized ads by resetting your Advertising ID in Android Settings → Privacy → Ads.</li>
+      <li>You can review Google's privacy policy at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</li>
+    </ul>
+
+    <h2>Your Rights</h2>
+    <p><strong>EEA &amp; UK (GDPR):</strong> You have the right to access, correct, or delete your data; to withdraw advertising consent at any time; and to lodge a complaint with your local data protection authority.</p>
+    <p><strong>California (CCPA/CPRA):</strong> You have the right to know what data is collected about you, to opt out of the sale of personal information (we do not sell data), and to request deletion of data held by our advertising partners.</p>
+
+    <h2>Data Deletion</h2>
+    <p>Since AI QR Barcode Scanner stores everything locally, you are in full control:</p>
+    <ul>
+      <li>Delete individual scan history entries or favourites directly within the app</li>
+      <li>Clear all app data via Android Settings → Apps → AI QR Barcode → Storage → Clear Data</li>
+      <li>Uninstall the app to remove all app data permanently</li>
+    </ul>
+    <p>There is no remote account to delete. For advertising data held by Google, reset your Android Advertising ID in Settings → Privacy → Ads.</p>
 
     <h2>Contact</h2>
-    <p>Questions? Email us at <a href="mailto:contact@abhilabs.app">contact@abhilabs.app</a>.</p>
+    <p>Questions or privacy requests? Email us at <a href="mailto:contact@abhilabs.app">contact@abhilabs.app</a>.</p>
   </div>
 </main>
 <footer class="site-footer" role="contentinfo">
