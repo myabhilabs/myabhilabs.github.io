@@ -1,329 +1,194 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="app-lunavi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="../../assets/developer_logo.png">
-    <title>Lunavi: Offline Period Tracker | Abhi Labs</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                    },
-                    colors: {
-                        business: {
-                            DEFAULT: '#e11d48',
-                            dark: '#be123c',
-                            light: '#fb7185',
-                            premium: '#4c0519',
-                        }
-                    },
-                    animation: {
-                        'orb-slow': 'orb 20s infinite linear',
-                        'orb-slower': 'orb 25s infinite linear reverse',
-                    },
-                    keyframes: {
-                        orb: {
-                            '0%': { transform: 'translate(0, 0) scale(1)' },
-                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-                            '100%': { transform: 'translate(0, 0) scale(1)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        .hero-mesh {
-            background-color: #020617;
-            background-image:
-                radial-gradient(at 0% 0%, rgba(225, 29, 72, 0.15) 0px, transparent 50%),
-                radial-gradient(at 100% 0%, rgba(59, 130, 246, 0.1) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(225, 29, 72, 0.1) 0px, transparent 50%),
-                radial-gradient(at 0% 100%, rgba(59, 130, 246, 0.05) 0px, transparent 50%);
-        }
-
-        .glass-premium {
-            background: rgba(15, 23, 42, 0.7);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .text-premium-gradient {
-            background: linear-gradient(135deg, #ffffff 0%, #e11d48 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .screenshot-gallery::-webkit-scrollbar { height: 6px; }
-        .screenshot-gallery::-webkit-scrollbar-thumb { background: #e11d48; border-radius: 10px; }
-        .screenshot-gallery::-webkit-scrollbar-track { background: #0f172a; }
-
-        .screenshot-gallery {
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-        }
-        .snap-center {
-            scroll-snap-align: center;
-        }
-
-        .tech-bg {
-            background: radial-gradient(circle at top right, rgba(225, 29, 72, 0.15), transparent),
-                        radial-gradient(circle at bottom left, rgba(59, 130, 246, 0.1), transparent),
-                        #020617;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lunavi — Offline Period Tracker | Abhi Labs</title>
+  <meta name="description" content="100% offline period and fertility tracker for Android. Biometric security, zero cloud, zero ads. Your data never leaves your device.">
+  <link rel="canonical" href="https://abhilabs.app/apps/lunavi/">
+  <meta property="og:title" content="Lunavi — Offline Period Tracker">
+  <meta property="og:description" content="100% offline period and fertility tracker for Android. Biometric security, zero cloud, zero ads.">
+  <meta property="og:url" content="https://abhilabs.app/apps/lunavi/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/output.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Lunavi",
+    "operatingSystem": "Android",
+    "applicationCategory": "HealthApplication",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "url": "https://play.google.com/store/apps/details?id=com.abhilabs.lunavi"
+  }
+  </script>
 </head>
-<body class="bg-slate-950 text-white font-sans antialiased text-left">
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
 
-<nav class="fixed w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <div class="flex items-center gap-3">
-            <a href="../../index.html" class="flex items-center gap-3 hover:opacity-80 transition group">
-                <img src="../../assets/developer_logo.png" alt="Abhi Labs" class="h-8 w-auto object-contain">
-                <span class="text-2xl font-black tracking-tighter text-white uppercase">ABHI <span class="text-rose-500">LABS</span></span>
-            </a>
-        </div>
-        <div class="flex gap-10 items-center">
-            <a href="https://play.google.com/store/apps/details?id=com.abhilabs.lunavi" target="_blank"
-               class="bg-white text-slate-950 px-6 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-rose-500 hover:text-white transition shadow-lg">
-                Download Now
-            </a>
-        </div>
-    </div>
-</nav>
-
-<header class="relative pt-48 pb-32 px-6 hero-mesh overflow-hidden text-center border-b border-white/10">
-    <!-- Animated Background Orbs -->
-    <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-rose-500/5 rounded-full blur-[120px] animate-orb-slow"></div>
-    <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-500/5 rounded-full blur-[120px] animate-orb-slower"></div>
-
-    <div class="max-w-7xl mx-auto relative z-10 flex flex-col lg:flex-row items-center gap-20">
-        <div class="lg:w-3/5 text-left">
-            <div class="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full glass-premium border border-white/10 shadow-sm reveal">
-                <span class="relative flex h-2 w-2">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-500 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-rose-500"></span>
-                </span>
-                <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">100% Offline Privacy Sovereign</span>
-            </div>
-            <h1 class="text-6xl md:text-8xl font-black text-white leading-[0.85] mb-10 tracking-[-0.04em] uppercase reveal">
-                Period Tracking <br><span class="text-premium-gradient italic text-left">Redefined.</span>
-            </h1>
-            <p class="text-lg md:text-xl text-slate-400 max-w-xl leading-relaxed mb-12 font-medium reveal">
-                Experience absolute data sovereignty. Lunavi is a 100% offline period tracker built with modern engineering standards and a focus on complete user privacy.
-            </p>
-            <div class="flex flex-wrap gap-6 reveal">
-                <a href="https://play.google.com/store/apps/details?id=com.abhilabs.lunavi" target="_blank" class="hover:scale-105 transition-transform">
-                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16">
-                </a>
-            </div>
-        </div>
-        <div class="lg:w-2/5 flex justify-center relative reveal">
-            <div class="absolute inset-0 bg-rose-500/10 blur-[100px] rounded-full"></div>
-            <img src="./assets/applogo.png" alt="Lunavi Icon" class="relative w-72 rounded-[3.5rem] shadow-[0_50px_100px_-20px_rgba(225,29,72,0.3)] border-[12px] border-slate-900 z-10 transform hover:scale-105 transition-transform duration-700">
-        </div>
-    </div>
+<header class="site-header" role="banner">
+  <nav class="nav-container" aria-label="Main navigation">
+    <a href="/" class="nav-logo" aria-label="Abhi Labs home">
+      <span class="nav-logo-mark">AL</span>
+      <span class="nav-logo-text">Abhi Labs</span>
+    </a>
+    <ul class="nav-links" role="list" id="nav-menu">
+      <li><a href="/" class="nav-link">Portfolio</a></li>
+      <li><a href="/about/" class="nav-link">About</a></li>
+      <li><a href="mailto:myabhilabs@gmail.com" class="nav-cta">Contact</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+        <path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </nav>
 </header>
 
-<section class="py-32 bg-slate-950">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="relative rounded-[4rem] overflow-hidden shadow-2xl border border-white/10 reveal">
-            <img src="./assets/heropost.png" alt="Lunavi Features" class="w-full h-auto transform hover:scale-[1.01] transition duration-700">
-        </div>
+<main id="main-content">
+  <!-- Hero -->
+  <section class="hero" aria-label="Lunavi overview">
+    <div class="hero-orb" style="width:600px;height:600px;top:-200px;right:-200px;background:radial-gradient(circle,#f43f5e,transparent)" aria-hidden="true"></div>
+    <div class="hero-container">
+      <div class="hero-eyebrow">Health & Wellness · Android</div>
+      <h1 class="hero-title">Lunavi</h1>
+      <p class="hero-subtitle">100% offline period and fertility tracker. Your health data stays on your device — biometric lock, zero cloud, zero ads.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="https://play.google.com/store/apps/details?id=com.abhilabs.lunavi" class="btn-primary" rel="noopener noreferrer" target="_blank">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.18 23.76a1.5 1.5 0 001.48-.18l13.42-7.74-3.06-3.06-11.84 11zm16.28-9.66L15.9 12l3.56-2.1 3.14 1.82a1.5 1.5 0 010 2.56l-3.14 1.82zM4.66.42a1.5 1.5 0 00-1.48.16v22.84L14.82 12 4.66.42z"/></svg>
+          Get on Google Play
+        </a>
+        <a href="/" class="btn-secondary">← All Apps</a>
+      </div>
     </div>
-</section>
+  </section>
 
-<section class="py-32 bg-slate-900 border-y border-white/5 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="mb-20 max-w-2xl text-left reveal">
-            <h2 class="text-4xl md:text-5xl font-black text-white uppercase tracking-tight leading-tight mb-8">Zero Cloud. <br><span class="text-rose-500 italic underline decoration-rose-500/20 underline-offset-8">Total Sovereignty.</span></h2>
-            <p class="text-lg text-slate-400 font-medium leading-relaxed">
-                Your health data belongs to you, not a server. Lunavi processes everything locally on your device with biometric protection and zero tracking.
-            </p>
-        </div>
-
-        <div class="screenshot-gallery flex overflow-x-auto space-x-8 pb-16 reveal">
-            <img src="./assets/1.png" class="h-[600px] w-auto rounded-[3rem] shadow-2xl snap-center border-4 border-slate-800 hover:scale-[1.02] transition-transform duration-500">
-            <img src="./assets/2.png" class="h-[600px] w-auto rounded-[3rem] shadow-2xl snap-center border-4 border-slate-800 hover:scale-[1.02] transition-transform duration-500">
-            <img src="./assets/3.png" class="h-[600px] w-auto rounded-[3rem] shadow-2xl snap-center border-4 border-slate-800 hover:scale-[1.02] transition-transform duration-500">
-            <img src="./assets/4.png" class="h-[600px] w-auto rounded-[3rem] shadow-2xl snap-center border-4 border-slate-800 hover:scale-[1.02] transition-transform duration-500">
-            <img src="./assets/5.png" class="h-[600px] w-auto rounded-[3rem] shadow-2xl snap-center border-4 border-slate-800 hover:scale-[1.02] transition-transform duration-500">
-            <img src="./assets/6.png" class="h-[600px] w-auto rounded-[3rem] shadow-2xl snap-center border-4 border-slate-800 hover:scale-[1.02] transition-transform duration-500">
-            <img src="./assets/7.png" class="h-[600px] w-auto rounded-[3rem] shadow-2xl snap-center border-4 border-slate-800 hover:scale-[1.02] transition-transform duration-500">
-            <img src="./assets/8.png" class="h-[600px] w-auto rounded-[3rem] shadow-2xl snap-center border-4 border-slate-800 hover:scale-[1.02] transition-transform duration-500">
-        </div>
+  <!-- Screenshots -->
+  <section class="section" aria-label="Screenshots">
+    <div class="section-container">
+      <div class="screenshot-gallery reveal" aria-label="Lunavi app screenshots">
+        <img src="assets/1.png" alt="Lunavi home screen" width="140" height="280" fetchpriority="high">
+        <img src="assets/2.png" alt="Lunavi period tracking" width="140" height="280" loading="lazy">
+        <img src="assets/3.png" alt="Lunavi fertility window" width="140" height="280" loading="lazy">
+        <img src="assets/4.png" alt="Lunavi cycle analytics" width="140" height="280" loading="lazy">
+        <img src="assets/5.png" alt="Lunavi biometric security" width="140" height="280" loading="lazy">
+        <img src="assets/6.png" alt="Lunavi settings" width="140" height="280" loading="lazy">
+        <img src="assets/7.png" alt="Lunavi health insights" width="140" height="280" loading="lazy">
+        <img src="assets/8.png" alt="Lunavi privacy features" width="140" height="280" loading="lazy">
+      </div>
     </div>
-</section>
+  </section>
 
-<section class="py-32 bg-slate-950">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="max-w-3xl mb-20 text-left reveal">
-            <div class="inline-flex items-center gap-2 bg-rose-500/10 border border-rose-500/20 px-4 py-2 rounded-full mb-6 text-rose-500">
-                <i class="fas fa-microchip text-xs"></i>
-                <span class="text-[10px] font-black uppercase tracking-widest">Jetpack Compose UI Engine</span>
-            </div>
-            <h2 class="text-4xl md:text-5xl font-black mb-8 text-white tracking-tight uppercase">Privacy Benchmarks</h2>
-            <p class="text-lg text-slate-400 leading-relaxed font-medium italic">
-                Engineering a new standard for sensitive data management on Android.
-            </p>
+  <!-- Features -->
+  <section class="section" style="background:var(--bg-subtle);border-top:1px solid var(--border)" aria-label="Features">
+    <div class="section-container">
+      <p class="section-label">Features</p>
+      <h2 class="section-title">Privacy-first health tracking</h2>
+      <p class="section-subtitle" style="margin-bottom:3rem">Track your cycle with confidence. Your data never leaves your device — no account, no cloud, no ads.</p>
+      <div class="feature-grid">
+        <div class="feature-card reveal">
+          <div class="feature-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2a6 6 0 100 12A6 6 0 0010 2z" stroke="currentColor" stroke-width="1.5"/><path d="M10 6v4l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="feature-title">Biometric Security</h3>
+          <p class="feature-desc">Fingerprint lock and emergency wipe protect your sensitive health data with military-grade encryption.</p>
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 reveal">
-            <div class="group p-8 rounded-[2.5rem] border border-white/5 bg-white/5 hover:bg-white/10 hover:shadow-2xl transition-all duration-500">
-                <div class="w-14 h-14 bg-rose-500/20 rounded-2xl shadow-sm flex items-center justify-center text-rose-500 mb-6 group-hover:bg-rose-500 group-hover:text-white transition-all"><i class="fas fa-fingerprint text-2xl"></i></div>
-                <h4 class="text-xl font-black uppercase mb-4 tracking-tight">Security</h4>
-                <p class="text-slate-400 text-sm font-medium leading-relaxed">Integrated biometric locking with an offline reset token and emergency wipe.</p>
-            </div>
-            <div class="group p-8 rounded-[2.5rem] border border-white/5 bg-white/5 hover:bg-white/10 hover:shadow-2xl transition-all duration-500">
-                <div class="w-14 h-14 bg-rose-500/20 rounded-2xl shadow-sm flex items-center justify-center text-rose-500 mb-6 group-hover:bg-rose-500 group-hover:text-white transition-all"><i class="fas fa-chart-line text-2xl"></i></div>
-                <h4 class="text-xl font-black uppercase mb-4 tracking-tight">Analytics</h4>
-                <p class="text-slate-400 text-sm font-medium leading-relaxed">Monthly length timelines and symptom heatmaps processed entirely locally.</p>
-            </div>
-            <div class="group p-8 rounded-[2.5rem] border border-white/5 bg-white/5 hover:bg-white/10 hover:shadow-2xl transition-all duration-500">
-                <div class="w-14 h-14 bg-rose-500/20 rounded-2xl shadow-sm flex items-center justify-center text-rose-500 mb-6 group-hover:bg-rose-500 group-hover:text-white transition-all"><i class="fas fa-cloud-slash text-2xl"></i></div>
-                <h4 class="text-xl font-black uppercase mb-4 tracking-tight">Zero Cloud</h4>
-                <p class="text-slate-400 text-sm font-medium leading-relaxed">No account required. No data leaves the device. Complete health data portability.</p>
-            </div>
-            <div class="group p-8 rounded-[2.5rem] border border-white/5 bg-white/5 hover:bg-white/10 hover:shadow-2xl transition-all duration-500">
-                <div class="w-14 h-14 bg-rose-500/20 rounded-2xl shadow-sm flex items-center justify-center text-rose-500 mb-6 group-hover:bg-rose-500 group-hover:text-white transition-all"><i class="fas fa-leaf text-2xl"></i></div>
-                <h4 class="text-xl font-black uppercase mb-4 tracking-tight">Ad Free</h4>
-                <p class="text-slate-400 text-sm font-medium leading-relaxed">No ads, no tracking, and no upsells. Just a clean, professional health utility.</p>
-            </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M10 6v4l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="feature-title">Fertility Analytics</h3>
+          <p class="feature-desc">Accurate cycle predictions and fertile window tracking using advanced algorithms running entirely on your device.</p>
         </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2l2 6h6l-5 3.6 1.9 6L10 14l-4.9 3.6L7 11.6 2 8h6L10 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="feature-title">Zero Cloud</h3>
+          <p class="feature-desc">Every menstrual and health record stays on your device. No servers, no backups, no cloud storage — total local control.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M7 10h6M10 7v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="feature-title">Ad-Free Forever</h3>
+          <p class="feature-desc">No ads, ever. No distracting banners, no sponsored content, no tracking pixels. Just your health data.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M6 10h8M10 6v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="feature-title">Jetpack Compose</h3>
+          <p class="feature-desc">Smooth, responsive Material 3 UI designed for fast performance and a delightful user experience.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2z" stroke="currentColor" stroke-width="1.5"/><path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="feature-title">Privacy-First Design</h3>
+          <p class="feature-desc">No account required. No data collection. No telemetry. Built with your privacy as the first principle.</p>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
 
-<section class="py-32 tech-bg text-white relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 relative z-10">
-        <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-20 gap-8 reveal">
-            <div class="max-w-2xl text-left">
-                <h2 class="text-4xl md:text-6xl font-black mb-6 tracking-tight uppercase leading-[0.9]">Technical <br><span class="text-rose-500 italic text-left">DNA</span></h2>
-                <p class="text-slate-400 font-medium text-lg text-left">Built with Modern Android Architecture.</p>
-            </div>
-            <div class="flex gap-6 reveal">
-                <div class="px-6 py-4 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl text-center">
-                    <span class="block text-3xl font-black text-rose-500 tracking-tighter">100%</span>
-                    <span class="text-[10px] text-slate-500 uppercase font-bold tracking-[0.2em]">Offline-First</span>
-                </div>
-                <div class="px-6 py-4 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl text-center">
-                    <span class="block text-3xl font-black text-blue-400 tracking-tighter">Secure</span>
-                    <span class="text-[10px] text-slate-500 uppercase font-bold tracking-[0.2em]">Encryption</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="grid lg:grid-cols-3 gap-10 reveal">
-            <div class="space-y-10">
-                <div class="p-10 bg-white/5 backdrop-blur-xl border border-white/10 rounded-[3rem] hover:border-rose-500/50 transition-all duration-500 text-left">
-                    <div class="w-16 h-16 rounded-2xl bg-rose-500/20 flex items-center justify-center text-rose-500 mb-8"><i class="fas fa-code text-3xl"></i></div>
-                    <h3 class="text-2xl font-black mb-4 uppercase tracking-tight">Modern Stack</h3>
-                    <p class="text-slate-400 font-medium leading-relaxed mb-6">Declarative UI built with Jetpack Compose, following Clean Architecture and MVVM patterns.</p>
-                    <span class="text-[10px] font-mono font-bold text-rose-500 bg-rose-500/10 px-3 py-1 rounded-lg">COMPOSE_STABLE_1.7</span>
-                </div>
-                <div class="p-10 bg-white/5 backdrop-blur-xl border border-white/10 rounded-[3rem] hover:border-blue-500/50 transition-all duration-500 text-left">
-                    <div class="w-16 h-16 rounded-2xl bg-blue-500/20 flex items-center justify-center text-blue-400 mb-8"><i class="fas fa-database text-3xl"></i></div>
-                    <h3 class="text-2xl font-black mb-4 uppercase tracking-tight">Local Storage</h3>
-                    <p class="text-slate-400 font-medium leading-relaxed">High-performance Room DB implementation for all cycle records and health symptoms.</p>
-                </div>
-            </div>
-
-            <div class="lg:col-span-2 bg-slate-900/40 backdrop-blur-xl border border-white/10 rounded-[4rem] p-12 md:p-16 relative overflow-hidden text-left">
-                <h3 class="text-3xl font-black mb-12 flex items-center uppercase tracking-tight">
-                    <span class="w-2 h-10 bg-rose-500 rounded-full mr-6"></span>
-                    Architectural Specs
-                </h3>
-                <div class="grid md:grid-cols-2 gap-16">
-                    <div>
-                        <h4 class="text-xs font-black uppercase tracking-[0.3em] text-slate-500 mb-10 flex items-center"><i class="fas fa-layer-group mr-4 text-rose-500"></i> Core Components</h4>
-                        <div class="flex flex-wrap gap-3">
-                            <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-[10px] font-bold text-slate-300 uppercase tracking-widest">Dagger-Hilt</span>
-                            <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-[10px] font-bold text-slate-300 uppercase tracking-widest">StateFlow</span>
-                            <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-[10px] font-bold text-slate-300 uppercase tracking-widest">ViewModels</span>
-                            <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-[10px] font-bold text-slate-300 uppercase tracking-widest">Repositories</span>
-                            <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-[10px] font-bold text-slate-300 uppercase tracking-widest">Use Cases</span>
-                        </div>
-                    </div>
-                    <div>
-                        <h4 class="text-xs font-black uppercase tracking-[0.3em] text-slate-500 mb-10 flex items-center"><i class="fas fa-lock mr-4 text-blue-400"></i> Security Layer</h4>
-                        <div class="grid grid-cols-2 gap-x-8 gap-y-4">
-                            <span class="text-[11px] text-slate-400 font-bold uppercase tracking-widest italic">Biometric API</span>
-                            <span class="text-[11px] text-slate-400 font-bold uppercase tracking-widest italic">Offline Reset</span>
-                            <span class="text-[11px] text-slate-400 font-bold uppercase tracking-widest italic">Emergency Wipe</span>
-                            <span class="text-[11px] text-slate-400 font-bold uppercase tracking-widest italic">Local Export</span>
-                            <span class="text-[11px] text-slate-400 font-bold uppercase tracking-widest italic">Zero Analytics</span>
-                            <span class="text-[11px] text-slate-400 font-bold uppercase tracking-widest italic">Discreet Mode</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <!-- CTA -->
+  <section class="section" aria-label="Download">
+    <div class="section-container" style="text-align:center;max-width:480px">
+      <h2 class="section-title">Take control of your health</h2>
+      <p class="section-subtitle" style="margin:0 auto 2rem">Free on Google Play. Your cycle and health data never leaves your device.</p>
+      <a href="https://play.google.com/store/apps/details?id=com.abhilabs.lunavi" class="btn-primary" rel="noopener noreferrer" target="_blank">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.18 23.76a1.5 1.5 0 001.48-.18l13.42-7.74-3.06-3.06-11.84 11zm16.28-9.66L15.9 12l3.56-2.1 3.14 1.82a1.5 1.5 0 010 2.56l-3.14 1.82zM4.66.42a1.5 1.5 0 00-1.48.16v22.84L14.82 12 4.66.42z"/></svg>
+        Download Free on Google Play
+      </a>
+      <p style="margin-top:1rem;font-size:0.8125rem;color:var(--text-3)">
+        <a href="/privacy/lunavi/" class="footer-link">Privacy Policy</a>
+      </p>
     </div>
-</section>
+  </section>
+</main>
 
-<footer class="py-20 bg-slate-950 border-t border-white/10">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="flex flex-col md:flex-row justify-between items-center gap-12 text-left">
-            <div class="flex items-center gap-4">
-                <img src="../../assets/developer_logo.png" alt="Abhi Labs" class="h-10 w-auto">
-                <div>
-                    <h2 class="text-2xl font-black tracking-tighter mb-2 uppercase">ABHI <span class="text-rose-500">LABS</span></h2>
-                    <p class="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400 italic leading-none">Tomorrow's Tech Today</p>
-                </div>
-            </div>
-            <div class="flex gap-10">
-                <a href="../../index.html" class="text-xs font-bold text-slate-400 uppercase tracking-widest hover:text-rose-500 transition">Home</a>
-                <a href="https://sites.google.com/view/lunavi-privacypolicy/home" target="_blank" class="text-xs font-bold text-slate-400 uppercase tracking-widest hover:text-rose-500 transition">Privacy Policy</a>
-                <a href="../../LICENSE" class="text-xs font-bold text-slate-400 uppercase tracking-widest hover:text-rose-500 transition">License</a>
-            </div>
-        </div>
-        <div class="mt-20 pt-10 border-t border-white/5 text-center text-[10px] font-bold text-slate-600 uppercase tracking-[0.3em]">
-            Abhi Labs © 2026 • Bangalore, India
-            <div class="mt-6 flex justify-center">
-                <img src="https://hits.sh/myabhilabs.github.io/badge.svg?color=e11d48&label=VISITS" alt="Visitor Counter"/>
-            </div>
-        </div>
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <a href="/" class="nav-logo" aria-label="Abhi Labs home">
+        <span class="nav-logo-mark">AL</span>
+        <span class="nav-logo-text">Abhi Labs</span>
+      </a>
+      <p class="footer-tagline">Tomorrow's Tech Today</p>
     </div>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="/" class="footer-link">Portfolio</a>
+      <a href="/about/" class="footer-link">About</a>
+      <a href="/privacy/lunavi/" class="footer-link">Privacy</a>
+      <a href="mailto:myabhilabs@gmail.com" class="footer-link">Contact</a>
+    </nav>
+    <p class="footer-copy">© 2026 Abhi Labs. Bangalore, India.</p>
+  </div>
 </footer>
 
 <script>
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    document.querySelectorAll('.reveal').forEach(el => {
-        observer.observe(el);
-    });
+  const btn = document.querySelector('.nav-hamburger');
+  const links = document.querySelector('.nav-links');
+  btn.addEventListener('click', () => {
+    const open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    links.classList.toggle('nav-links--open');
+  });
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.nav-container')) {
+      btn.setAttribute('aria-expanded', 'false');
+      links.classList.remove('nav-links--open');
+    }
+  });
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); io.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 </body>
 </html>
