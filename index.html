@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <link rel="icon" type="image/png" href="/assets/developer_logo.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abhi Labs — Tomorrow's Tech Today</title>
+  <title>Abhi Labs — Premium Android Apps</title>
   <meta name="description" content="Premium Android apps built by Abhi Labs. Offline-first, privacy-first, beautifully crafted.">
   <link rel="canonical" href="https://abhilabs.app/">
-  <meta property="og:title" content="Abhi Labs — Tomorrow's Tech Today">
+  <meta property="og:title" content="Abhi Labs — Premium Android Apps">
   <meta property="og:description" content="Premium Android apps built by Abhi Labs. Offline-first, privacy-first, beautifully crafted.">
   <meta property="og:url" content="https://abhilabs.app/">
   <meta property="og:type" content="website">
@@ -19,7 +19,6 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" onload="this.rel='stylesheet'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="/styles/output.css">
-  <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -27,7 +26,7 @@
     "name": "Abhi Labs",
     "url": "https://abhilabs.app",
     "description": "Premium Android app studio based in Bangalore, India.",
-    "contactPoint": { "@type": "ContactPoint", "email": "myabhilabs@gmail.com" }
+    "contactPoint": { "@type": "ContactPoint", "email": "contact@abhilabs.app" }
   }
   </script>
 </head>
@@ -43,7 +42,7 @@
     <ul class="nav-links" role="list" id="nav-menu">
       <li><a href="/" class="nav-link" aria-current="page">Portfolio</a></li>
       <li><a href="/about/" class="nav-link">About</a></li>
-      <li><a href="mailto:myabhilabs@gmail.com" class="nav-cta">Contact</a></li>
+      <li><a href="mailto:contact@abhilabs.app" class="nav-cta">Contact</a></li>
     </ul>
     <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
@@ -54,223 +53,147 @@
 </header>
 
 <main id="main-content">
+
   <!-- Hero -->
-  <section class="hero" aria-label="Introduction">
-    <div class="hero-orb" style="width:500px;height:500px;top:-100px;right:-150px;background:radial-gradient(circle,#0d9488,transparent)" aria-hidden="true"></div>
-    <div class="hero-orb animate-orb-slow" style="width:300px;height:300px;bottom:-50px;left:-100px;background:radial-gradient(circle,#6366f1,transparent)" aria-hidden="true"></div>
-    <div class="hero-container">
-      <div class="hero-eyebrow">
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><circle cx="6" cy="6" r="5"/></svg>
-        Bangalore, India · 10+ yrs Android
-      </div>
-      <h1 class="hero-title">Tomorrow's<br>Tech Today</h1>
-      <p class="hero-subtitle">Premium Android apps engineered for performance, privacy, and delight. No subscriptions. No tracking. Just great software.</p>
-      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
-        <a href="#portfolio" class="btn-primary">
-          View Apps
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a href="/about/" class="btn-secondary">About Us</a>
-      </div>
+  <section class="home-hero" aria-label="Introduction">
+    <div class="home-hero__orb" aria-hidden="true"></div>
+    <div style="position:relative;z-index:2">
+      <p class="home-hero__label">
+        <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor" aria-hidden="true"><circle cx="4" cy="4" r="4"/></svg>
+        Bangalore, India · Android Studio
+      </p>
+      <h1 class="home-hero__title">Premium Android<br>Apps. No Compromise.</h1>
+      <p class="home-hero__sub">Offline-first. Privacy-first. Beautifully built.</p>
     </div>
   </section>
 
-  <!-- Portfolio -->
-  <section class="section" id="portfolio" aria-label="App portfolio">
-    <div class="section-container">
-      <p class="section-label">Our Apps</p>
-      <h2 class="section-title">Five apps. One standard.</h2>
-      <p class="section-subtitle" style="margin-bottom:4rem">Every app is offline-first, subscription-free, and built to last.</p>
+  <!-- App Grid -->
+  <section id="portfolio" class="app-grid-section" aria-label="App portfolio">
+    <h2 class="sr-only">Our Apps</h2>
+    <div class="app-grid">
 
-      <div style="display:flex;flex-direction:column;gap:2rem">
-
-        <!-- AbhiScan Pro -->
-        <article class="app-card reveal" aria-label="AbhiScan Pro">
-          <div>
-            <div class="app-card-badge" style="--accent:#0d9488;--accent-subtle:#f0fdfa;--accent-text:#0d9488">
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor" aria-hidden="true"><circle cx="5" cy="5" r="4"/></svg>
-              Document Scanner
-            </div>
-            <h3 class="app-card-title">AbhiScan Pro</h3>
-            <p class="app-card-desc">Professional offline PDF scanner with OpenCV edge detection, full-text OCR search, and 7 scan modes.</p>
-            <ul class="app-card-features">
-              <li>Auto Edge Detection — OpenCV precision cropping</li>
-              <li>OCR Search — SQLite FTS4 full-text search</li>
-              <li>Magic Color — adaptive contrast enhancement</li>
-              <li>Batch Mode — scan up to 35 pages in one session</li>
-            </ul>
-            <div class="app-card-social">
-              <div class="social-badge">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="#f59e0b" aria-hidden="true"><path d="M7 1l1.8 3.6L13 5.3l-3 2.9.7 4.1L7 10.1l-3.7 2.2.7-4.1-3-2.9 4.2-.7L7 1z"/></svg>
-                <!-- PLACEHOLDER: replace with real rating e.g. 4.6 -->
-                4.6
+      <!-- AbhiScan Pro — FEATURED -->
+      <a href="/apps/abhi-scan/" class="app-card app-card--featured app-card--featured-1" style="--accent:#0d9488" aria-label="AbhiScan Pro — view app">
+        <div class="app-card__border-glow" aria-hidden="true"></div>
+        <div>
+          <div class="app-card__badge app-card__badge--featured" style="--accent:#0d9488">Featured · Scanner</div>
+          <h3 class="app-card__name">AbhiScan Pro</h3>
+          <p class="app-card__tagline">Professional offline PDF scanner with OpenCV edge detection and full-text OCR search.</p>
+          <ul class="app-card__features">
+            <li>OpenCV Auto Edge Detection</li>
+            <li>Full-Text OCR Search</li>
+            <li>7 Scan Modes · Batch 35 pages</li>
+          </ul>
+        </div>
+        <div class="app-card__phone-wrap">
+          <div class="phone-mockup phone-mockup--sm phone-mockup--card">
+            <div class="phone-mockup__frame">
+              <div class="phone-mockup__top">
+                <div class="phone-mockup__speaker"></div>
+                <div class="phone-mockup__camera"></div>
               </div>
-              <div class="social-badge">
-                <!-- PLACEHOLDER: replace with real download count e.g. "10K+" -->
-                10K+ downloads
+              <div class="phone-mockup__screen">
+                <img src="/apps/abhi-scan/assets/1.png" alt="AbhiScan Pro scanning interface" width="136" height="280" loading="lazy">
               </div>
             </div>
-            <a href="/apps/abhi-scan/" class="app-card-cta" style="--accent:#0d9488;--accent-hover:#0a7a6e">
-              Learn more<span class="sr-only"> about AbhiScan Pro</span>
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
           </div>
-          <div class="screenshot-gallery" aria-label="AbhiScan Pro screenshots">
-            <img src="/apps/abhi-scan/assets/1.png" alt="AbhiScan Pro scan mode" width="140" height="260" loading="lazy">
-            <img src="/apps/abhi-scan/assets/2.png" alt="AbhiScan Pro edge detection" width="140" height="260" loading="lazy">
-            <img src="/apps/abhi-scan/assets/3.png" alt="AbhiScan Pro PDF viewer" width="140" height="260" loading="lazy">
-          </div>
-        </article>
+        </div>
+        <div class="app-card__cta">
+          Explore<span class="sr-only"> AbhiScan Pro</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </a>
 
-        <!-- AbhiScan Lite -->
-        <article class="app-card app-card--reverse reveal" aria-label="AbhiScan Lite">
-          <div class="screenshot-gallery" aria-label="AbhiScan Lite screenshots">
-            <img src="/apps/abhi-scan-lite/assets/screen-1.png" alt="AbhiScan Lite home" width="140" height="260" loading="lazy">
-            <img src="/apps/abhi-scan-lite/assets/screen-2.png" alt="AbhiScan Lite scan" width="140" height="260" loading="lazy">
-            <img src="/apps/abhi-scan-lite/assets/screen-3.png" alt="AbhiScan Lite PDF" width="140" height="260" loading="lazy">
-          </div>
-          <div>
-            <div class="app-card-badge" style="--accent:#0d9488;--accent-subtle:#f0fdfa;--accent-text:#0d9488">
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor" aria-hidden="true"><circle cx="5" cy="5" r="4"/></svg>
-              Document Scanner
-            </div>
-            <h3 class="app-card-title">AbhiScan Lite</h3>
-            <p class="app-card-desc">All the core scanning power in a featherweight 5MB package. Perfect for everyday use.</p>
-            <ul class="app-card-features">
-              <li>Auto Edge Detection — same OpenCV engine</li>
-              <li>Privacy Mode — zero cloud, zero data collection</li>
-              <li>5MB — fits on any device</li>
-              <li>35-page batch scanning</li>
-            </ul>
-            <a href="/apps/abhi-scan-lite/" class="app-card-cta" style="--accent:#0d9488;--accent-hover:#0a7a6e">
-              Learn more<span class="sr-only"> about AbhiScan Lite</span>
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-        </article>
-
-        <!-- Lunavi -->
-        <article class="app-card reveal" aria-label="Lunavi">
-          <div>
-            <div class="app-card-badge" style="--accent:#e11d48;--accent-subtle:#fff1f2;--accent-text:#e11d48">
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor" aria-hidden="true"><circle cx="5" cy="5" r="4"/></svg>
-              Health &amp; Wellness
-            </div>
-            <h3 class="app-card-title">Lunavi</h3>
-            <p class="app-card-desc">100% offline period and fertility tracker with biometric security, zero cloud dependency, and zero ads.</p>
-            <ul class="app-card-features">
-              <li>Biometric Security — fingerprint + emergency wipe</li>
-              <li>Zero Cloud — all data stays on your device</li>
-              <li>Fertility Analytics — cycle prediction engine</li>
-              <li>Ad-Free — always, forever</li>
-            </ul>
-            <div class="app-card-social">
-              <div class="social-badge">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="#f59e0b" aria-hidden="true"><path d="M7 1l1.8 3.6L13 5.3l-3 2.9.7 4.1L7 10.1l-3.7 2.2.7-4.1-3-2.9 4.2-.7L7 1z"/></svg>
-                <!-- PLACEHOLDER -->
-                4.5
+      <!-- Lunavi — FEATURED -->
+      <a href="/apps/lunavi/" class="app-card app-card--featured app-card--featured-2" style="--accent:#e11d48" aria-label="Lunavi — view app">
+        <div class="app-card__border-glow" aria-hidden="true"></div>
+        <div>
+          <div class="app-card__badge app-card__badge--featured" style="--accent:#e11d48">Featured · Health</div>
+          <h3 class="app-card__name">Lunavi</h3>
+          <p class="app-card__tagline">Your cycle, your data. AI ovulation predictions that never leave your device.</p>
+          <ul class="app-card__features">
+            <li>AI Ovulation Predictions</li>
+            <li>100% Offline · Zero Ads</li>
+            <li>Mood &amp; Symptom Tracking</li>
+          </ul>
+        </div>
+        <div class="app-card__phone-wrap">
+          <div class="phone-mockup phone-mockup--sm phone-mockup--card">
+            <div class="phone-mockup__frame">
+              <div class="phone-mockup__top">
+                <div class="phone-mockup__speaker"></div>
+                <div class="phone-mockup__camera"></div>
               </div>
-              <div class="social-badge">
-                <!-- PLACEHOLDER -->
-                5K+ downloads
+              <div class="phone-mockup__screen">
+                <img src="/apps/lunavi/assets/1.png" alt="Lunavi cycle tracking" width="136" height="280" loading="lazy">
               </div>
             </div>
-            <a href="/apps/lunavi/" class="app-card-cta" style="--accent:#e11d48;--accent-hover:#be123c">
-              Learn more<span class="sr-only"> about Lunavi</span>
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
           </div>
-          <div class="screenshot-gallery" aria-label="Lunavi screenshots">
-            <img src="/apps/lunavi/assets/1.png" alt="Lunavi cycle view" width="140" height="260" loading="lazy">
-            <img src="/apps/lunavi/assets/2.png" alt="Lunavi analytics" width="140" height="260" loading="lazy">
-            <img src="/apps/lunavi/assets/3.png" alt="Lunavi insights" width="140" height="260" loading="lazy">
-          </div>
-        </article>
+        </div>
+        <div class="app-card__cta">
+          Explore<span class="sr-only"> Lunavi</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </a>
 
-        <!-- AbhiNidra -->
-        <article class="app-card app-card--reverse reveal" aria-label="AbhiNidra">
-          <div class="screenshot-gallery" aria-label="AbhiNidra screenshots">
-            <img src="/apps/abhinidra/assets/1.png" alt="AbhiNidra sound library" width="140" height="260" loading="lazy">
-            <img src="/apps/abhinidra/assets/2.png" alt="AbhiNidra equalizer" width="140" height="260" loading="lazy">
-            <img src="/apps/abhinidra/assets/3.png" alt="AbhiNidra timer" width="140" height="260" loading="lazy">
-          </div>
-          <div>
-            <div class="app-card-badge" style="--accent:#6366f1;--accent-subtle:#eef2ff;--accent-text:#6366f1">
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor" aria-hidden="true"><circle cx="5" cy="5" r="4"/></svg>
-              Sleep &amp; Wellness
-            </div>
-            <h3 class="app-card-title">AbhiNidra</h3>
-            <p class="app-card-desc">Sleep sounds and white noise with adaptive masking, 60+ high-fidelity sounds, and spatial audio — all offline.</p>
-            <ul class="app-card-features">
-              <li>60+ Sounds — rain, ocean, forest, brown noise</li>
-              <li>5-Band Equalizer — tune to your hearing</li>
-              <li>Spatial Audio — immersive 3D soundscapes</li>
-              <li>Private Journal — sleep notes, offline</li>
-            </ul>
-            <a href="/apps/abhinidra/" class="app-card-cta" style="--accent:#6366f1;--accent-hover:#4f46e5">
-              Learn more<span class="sr-only"> about AbhiNidra</span>
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-        </article>
+      <!-- AbhiScan Lite — standard -->
+      <a href="/apps/abhi-scan-lite/" class="app-card app-card--standard-1" style="--accent:#0d9488" aria-label="AbhiScan Lite — view app">
+        <div class="app-card__border-glow" aria-hidden="true"></div>
+        <div class="app-card__initial">AS</div>
+        <div class="app-card__badge">Scanner · Lite</div>
+        <h3 class="app-card__name">AbhiScan Lite</h3>
+        <p class="app-card__tagline">Full scanner power in a featherweight 5 MB install.</p>
+        <ul class="app-card__features">
+          <li>5 MB Install Size</li>
+          <li>Offline Always</li>
+        </ul>
+        <div class="app-card__cta">
+          Explore<span class="sr-only"> AbhiScan Lite</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </a>
 
-        <!-- AI QR Barcode -->
-        <article class="app-card reveal" aria-label="AI QR Barcode Scanner">
-          <div>
-            <div class="app-card-badge" style="--accent:#0d9488;--accent-subtle:#f0fdfa;--accent-text:#0d9488">
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor" aria-hidden="true"><circle cx="5" cy="5" r="4"/></svg>
-              Productivity
-            </div>
-            <h3 class="app-card-title">AI QR Barcode</h3>
-            <p class="app-card-desc">Context-aware QR and barcode scanner powered by Google ML Kit. Auto-connects WiFi, launches UPI payments, and reads 13 formats.</p>
-            <ul class="app-card-features">
-              <li>Instant Scan — ML Kit real-time recognition</li>
-              <li>Smart UPI — one-tap payment launch</li>
-              <li>Auto WiFi — scan and connect automatically</li>
-              <li>13 Formats — QR, EAN, UPC, Code 128, PDF417…</li>
-            </ul>
-            <a href="/apps/ai-qr-barcode/" class="app-card-cta" style="--accent:#0d9488;--accent-hover:#0a7a6e">
-              Learn more<span class="sr-only"> about AI QR Barcode Scanner</span>
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-          <div class="screenshot-gallery" aria-label="AI QR Barcode screenshots">
-            <img src="/apps/ai-qr-barcode/assets/2.png" alt="AI QR scan view" width="140" height="260" loading="lazy">
-            <img src="/apps/ai-qr-barcode/assets/3.png" alt="AI QR history" width="140" height="260" loading="lazy">
-            <img src="/apps/ai-qr-barcode/assets/4.png" alt="AI QR barcode" width="140" height="260" loading="lazy">
-          </div>
-        </article>
+      <!-- AbhiNidra — standard -->
+      <a href="/apps/abhinidra/" class="app-card app-card--standard-2" style="--accent:#6366f1" aria-label="AbhiNidra — view app">
+        <div class="app-card__border-glow" aria-hidden="true"></div>
+        <div class="app-card__initial">AN</div>
+        <div class="app-card__badge">Sleep · Sounds</div>
+        <h3 class="app-card__name">AbhiNidra</h3>
+        <p class="app-card__tagline">Sleep sounds with adaptive volume. Your sleep is private.</p>
+        <ul class="app-card__features">
+          <li>50+ Sleep Sounds</li>
+          <li>Adaptive Volume</li>
+        </ul>
+        <div class="app-card__cta">
+          Explore<span class="sr-only"> AbhiNidra</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </a>
 
-      </div><!-- /app grid -->
+      <!-- AI QR Barcode — standard -->
+      <a href="/apps/ai-qr-barcode/" class="app-card app-card--standard-3" style="--accent:#0d9488" aria-label="AI QR Barcode — view app">
+        <div class="app-card__border-glow" aria-hidden="true"></div>
+        <div class="app-card__initial">QR</div>
+        <div class="app-card__badge">Scanner · AI</div>
+        <h3 class="app-card__name">AI QR Barcode</h3>
+        <p class="app-card__tagline">Every code format. AI safety check. All on-device.</p>
+        <ul class="app-card__features">
+          <li>ML Kit Safety Verify</li>
+          <li>Create QR Codes</li>
+        </ul>
+        <div class="app-card__cta">
+          Explore<span class="sr-only"> AI QR Barcode</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </a>
+
     </div>
   </section>
 
-  <!-- Coming Soon -->
-  <section class="section" style="background:var(--bg-subtle);border-top:1px solid var(--border);border-bottom:1px solid var(--border)" aria-label="Coming soon">
-    <div class="section-container" style="text-align:center;max-width:560px">
-      <p class="section-label">On the Horizon</p>
-      <h2 class="section-title">AI Smart Finance</h2>
-      <p class="section-subtitle" style="margin:0 auto">Intelligent expense tracking with ML-powered categorization. Zero cloud. Launching 2027.</p>
-    </div>
-  </section>
 </main>
 
 <footer class="site-footer" role="contentinfo">
-  <div class="footer-container">
-    <div class="footer-brand">
-      <a href="/" class="nav-logo" aria-label="Abhi Labs home">
-        <span class="nav-logo-mark">AL</span>
-        <span class="nav-logo-text">Abhi Labs</span>
-      </a>
-      <p class="footer-tagline">Tomorrow's Tech Today</p>
-    </div>
-    <nav class="footer-links" aria-label="Footer navigation">
-      <a href="/" class="footer-link">Portfolio</a>
-      <a href="/about/" class="footer-link">About</a>
-      <a href="mailto:myabhilabs@gmail.com" class="footer-link">Contact</a>
-    </nav>
-    <p class="footer-copy">© 2026 Abhi Labs. Bangalore, India.</p>
-  </div>
+  <p class="footer-copy">© 2026 Abhi Labs. Bangalore, India. · <a href="mailto:contact@abhilabs.app">contact@abhilabs.app</a></p>
 </footer>
 
 <script>
@@ -287,10 +210,6 @@
       links.classList.remove('nav-links--open');
     }
   });
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); io.unobserve(e.target); } });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 </body>
 </html>
