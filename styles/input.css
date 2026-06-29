@@ -4,30 +4,48 @@
 
 /* ── Design Tokens ─────────────────────────────────── */
 :root {
-  --bg: #08080a;
-  --bg-subtle: #0e0e10;
-  --surface: #111113;
-  --border: #1c1c1f;
-  --text-1: #fafafa;
-  --text-2: #a1a1aa;
-  --text-3: #52525b;
+  /* Light mode defaults */
+  --bg: #fafafa;
+  --bg-subtle: #f4f4f5;
+  --surface: #ffffff;
+  --border: #e4e4e7;
+  --text-1: #09090b;
+  --text-2: #52525b;
+  --text-3: #a1a1aa;
   --brand: #0d9488;
   --accent: #0d9488;
   --accent-hover: #0a7a6e;
   --accent-subtle: rgba(13,148,136,0.12);
   --accent-text: #0d9488;
-  --nav-bg: rgba(8, 8, 10, 0.85);
+  --nav-bg: rgba(250, 250, 250, 0.85);
   --phone-frame: #1a1a1e;
   --phone-border: #2a2a2e;
-  --card-bg: #0e0e10;
-  --card-border: #1c1c1f;
-  --noise-opacity: 0.035;
-  --shadow-lg: 0 20px 60px rgba(0,0,0,0.4);
+  --card-bg: #ffffff;
+  --card-border: #e4e4e7;
+  --noise-opacity: 0.015;
+  --shadow-lg: 0 20px 60px rgba(0,0,0,0.1);
   --radius-sm: 6px;
   --radius-md: 12px;
   --radius-lg: 20px;
   --radius-xl: 28px;
   --radius-2xl: 40px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #08080a;
+    --bg-subtle: #0e0e10;
+    --surface: #111113;
+    --border: #1c1c1f;
+    --text-1: #fafafa;
+    --text-2: #a1a1aa;
+    --text-3: #52525b;
+    --nav-bg: rgba(8, 8, 10, 0.85);
+    --card-bg: #0e0e10;
+    --card-border: #1c1c1f;
+    --noise-opacity: 0.035;
+    --shadow-lg: 0 20px 60px rgba(0,0,0,0.4);
+  }
 }
 
 /* Per-app accent classes */
@@ -226,9 +244,12 @@
 @media (max-width: 640px) {
   .nav-hamburger { display: flex; }
   .nav-links {
-    display: none; position: absolute;
+    display: none; position: fixed;
     top: 64px; left: 0; right: 0;
-    background: var(--bg);
+    z-index: 99;
+    background: var(--nav-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
     flex-direction: column; align-items: stretch;
     padding: 1rem;
