@@ -35,16 +35,6 @@ We apply the same rigor found in world-class consumer products to every line of 
 
 ---
 
-### ⚡ **AI QR Barcode Scanner: Create**
-*Beyond reading codes—interpreting intent with local intelligence.*
-- **🧠 Smart Actions:** Automatically triggers UPI payments, WiFi auth, or VCard imports based on code intent.
-- **🕵️ Secure Preview:** High-speed detection for all global 1D/2D formats with safe link previews.
-- **🎨 Dynamic Color:** Deep integration with Android 12+ wallpaper-based theming.
-- **🛒 Industrial Engine:** Global product barcode search with sub-millisecond latency.
-- [**Explore Landing Page**](./apps/ai-qr-barcode/index.html) • [**Download on Google Play**](https://play.google.com/store/apps/details?id=com.abhilabs.aiqrbarcodescanner)
-
----
-
 ### 🌙 **AbhiNidra: Sleep & White Noise**
 *Deep sleep Sanskrit for modern rest.*
 - **🧠 Adaptive Audio:** Real-time environmental noise masking via on-device edge processing.
@@ -52,6 +42,16 @@ We apply the same rigor found in world-class consumer products to every line of 
 - **📓 Private Journal:** 100% offline sleep tracking and dream journal with biometric security.
 - **🌊 India Collection:** Exclusive hi-fi recordings of monsoon rain, temple bells, and village nights.
 - [**Explore Landing Page**](./apps/abhinidra/index.html) • [**Download on Google Play**](https://play.google.com/store/apps/details?id=com.abhilabs.abhinidra)
+
+---
+
+### ⚡ **AI QR Barcode Scanner: Create**
+*Beyond reading codes—interpreting intent with local intelligence.*
+- **🧠 Smart Actions:** Automatically triggers UPI payments, WiFi auth, or VCard imports based on code intent.
+- **🕵️ Secure Preview:** High-speed detection for all global 1D/2D formats with safe link previews.
+- **🎨 Dynamic Color:** Deep integration with Android 12+ wallpaper-based theming.
+- **🛒 Industrial Engine:** Global product barcode search with sub-millisecond latency.
+- [**Explore Landing Page**](./apps/ai-qr-barcode/index.html) • [**Download on Google Play**](https://play.google.com/store/apps/details?id=com.abhilabs.aiqrbarcodescanner)
 
 ---
 
