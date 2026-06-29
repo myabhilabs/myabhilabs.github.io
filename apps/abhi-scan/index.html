@@ -232,6 +232,7 @@
         if (!screen) return;
         var filename = src.split('/').pop();
         if (screen.src.endsWith(filename)) return;
+        gsap.killTweensOf(screen);
         gsap.to(screen, {
           opacity: 0, duration: 0.15,
           onComplete: function () {
