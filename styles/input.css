@@ -542,7 +542,7 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
 .app-card__icon {
   width: 52px; height: 52px;
   border-radius: 14px;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
   display: block;
 }
 .app-hero__icon {
@@ -599,7 +599,10 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
 }
 .app-card__actions {
   display: flex; align-items: center; gap: 0.75rem;
-  margin-top: 1.5rem; flex-wrap: wrap;
+  margin-top: 1.5rem; flex-wrap: nowrap;
+}
+.app-card:not(.app-card--featured) .app-card__actions {
+  margin-top: auto; padding-top: 1.5rem;
 }
 .app-card__cta {
   display: flex; align-items: center; gap: 6px;
@@ -922,19 +925,23 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
 .site-footer {
   border-top: 1px solid var(--border);
   padding: 2rem;
-  display: flex; flex-direction: column; align-items: center; gap: 0.75rem;
+  display: flex; flex-direction: column; align-items: center; gap: 1rem;
+}
+.footer-brand {
+  display: flex; align-items: center; gap: 8px;
 }
 .footer-logo {
-  width: 28px; height: 28px;
-  border-radius: 7px;
+  width: 24px; height: 24px;
+  border-radius: 6px;
   display: block;
-  opacity: 0.7;
+  opacity: 0.6;
+  flex-shrink: 0;
 }
 .footer-copy {
   font-size: 13px; color: var(--text-3);
 }
-.footer-copy a { color: var(--accent); text-decoration: none; }
-.footer-copy a:hover { text-decoration: underline; }
+.footer-copy a { color: var(--text-3); text-decoration: none; }
+.footer-copy a:hover { color: var(--accent); }
 .footer-play-link {
   display: inline-flex; align-items: center; gap: 5px;
   font-size: 12px; color: var(--text-3);
