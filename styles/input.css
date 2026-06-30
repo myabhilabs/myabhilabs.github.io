@@ -597,6 +597,13 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
   align-items: flex-end; justify-content: center;
   margin-top: 1.5rem;
 }
+.app-card__feature-img {
+  width: 100%; height: auto;
+  border-radius: var(--radius-md);
+  margin-top: 1.5rem;
+  display: block;
+  object-fit: cover;
+}
 .app-card__actions {
   display: flex; align-items: center; gap: 0.75rem;
   margin-top: 1.5rem; flex-wrap: nowrap;
