@@ -37,7 +37,7 @@
 <header class="site-header" role="banner">
   <nav class="nav-container" aria-label="Main navigation">
     <a href="/" class="nav-logo" aria-label="Abhi Labs home">
-      <span class="nav-logo-mark">AL</span>
+      <img src="/assets/developer_logo.png" alt="Abhi Labs logo" class="nav-logo-mark" width="32" height="32">
       <span class="nav-logo-text">Abhi Labs</span>
     </a>
     <ul class="nav-links" role="list" id="nav-menu">
@@ -65,10 +65,10 @@
     <div style="position:relative;z-index:2">
       <p class="home-hero__label">
         <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor" aria-hidden="true"><circle cx="4" cy="4" r="4"/></svg>
-        Bangalore, India · Android Studio
+        tomorrow's tech, today
       </p>
       <h1 class="home-hero__title">Premium Android<br>Apps. No Compromise.</h1>
-      <p class="home-hero__sub">Offline-first. Privacy-first. Beautifully built.</p>
+      <p class="home-hero__sub">Abhi Labs builds simple, smart, and reliable Android apps—bringing tomorrow's tech to users today.</p>
     </div>
   </section>
 
@@ -78,9 +78,10 @@
     <div class="app-grid">
 
       <!-- AbhiScan Pro — FEATURED -->
-      <a href="/apps/abhi-scan/" class="app-card app-card--featured app-card--featured-1" style="--accent:#0d9488" aria-label="AbhiScan Pro — view app">
+      <article class="app-card app-card--featured app-card--featured-1" style="--accent:#0d9488">
         <div class="app-card__border-glow" aria-hidden="true"></div>
         <div>
+          <img src="/apps/abhi-scan/assets/applogo.png" alt="" class="app-card__icon" width="52" height="52" loading="lazy">
           <div class="app-card__badge app-card__badge--featured" style="--accent:#0d9488">Featured · Scanner</div>
           <h3 class="app-card__name">AbhiScan Pro</h3>
           <p class="app-card__tagline">Professional offline PDF scanner with OpenCV edge detection and full-text OCR search.</p>
@@ -103,16 +104,23 @@
             </div>
           </div>
         </div>
-        <div class="app-card__cta">
-          Explore<span class="sr-only"> AbhiScan Pro</span>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="app-card__actions">
+          <a href="/apps/abhi-scan/" class="app-card__cta">
+            Explore<span class="sr-only"> AbhiScan Pro</span>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.abhilabs.pdfscanner" class="app-card__play-link" target="_blank" rel="noopener noreferrer" aria-label="Get AbhiScan Pro on Google Play">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 1l18 11L3 23V1z"/></svg>
+            Google Play
+          </a>
         </div>
-      </a>
+      </article>
 
       <!-- Lunavi — FEATURED -->
-      <a href="/apps/lunavi/" class="app-card app-card--featured app-card--featured-2" style="--accent:#e11d48" aria-label="Lunavi — view app">
+      <article class="app-card app-card--featured app-card--featured-2" style="--accent:#e11d48">
         <div class="app-card__border-glow" aria-hidden="true"></div>
         <div>
+          <img src="/apps/lunavi/assets/applogo.png" alt="" class="app-card__icon" width="52" height="52" loading="lazy">
           <div class="app-card__badge app-card__badge--featured" style="--accent:#e11d48">Featured · Health</div>
           <h3 class="app-card__name">Lunavi</h3>
           <p class="app-card__tagline">Your cycle, your data. AI ovulation predictions that never leave your device.</p>
@@ -135,16 +143,22 @@
             </div>
           </div>
         </div>
-        <div class="app-card__cta">
-          Explore<span class="sr-only"> Lunavi</span>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="app-card__actions">
+          <a href="/apps/lunavi/" class="app-card__cta">
+            Explore<span class="sr-only"> Lunavi</span>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.abhilabs.lunavi" class="app-card__play-link" target="_blank" rel="noopener noreferrer" aria-label="Get Lunavi on Google Play">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 1l18 11L3 23V1z"/></svg>
+            Google Play
+          </a>
         </div>
-      </a>
+      </article>
 
       <!-- AbhiScan Lite — standard -->
-      <a href="/apps/abhi-scan-lite/" class="app-card app-card--standard-1" style="--accent:#0d9488" aria-label="AbhiScan Lite — view app">
+      <article class="app-card app-card--standard-1" style="--accent:#0d9488">
         <div class="app-card__border-glow" aria-hidden="true"></div>
-        <div class="app-card__initial">AS</div>
+        <img src="/apps/abhi-scan-lite/assets/play_store_icon.png" alt="" class="app-card__icon" width="52" height="52" loading="lazy">
         <div class="app-card__badge">Scanner · Lite</div>
         <h3 class="app-card__name">AbhiScan Lite</h3>
         <p class="app-card__tagline">Full scanner power in a featherweight 5 MB install.</p>
@@ -152,16 +166,22 @@
           <li>5 MB Install Size</li>
           <li>Offline Always</li>
         </ul>
-        <div class="app-card__cta">
-          Explore<span class="sr-only"> AbhiScan Lite</span>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="app-card__actions">
+          <a href="/apps/abhi-scan-lite/" class="app-card__cta">
+            Explore<span class="sr-only"> AbhiScan Lite</span>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.abhilabs.pdfscanner.lite" class="app-card__play-link" target="_blank" rel="noopener noreferrer" aria-label="Get AbhiScan Lite on Google Play">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 1l18 11L3 23V1z"/></svg>
+            Google Play
+          </a>
         </div>
-      </a>
+      </article>
 
       <!-- AbhiNidra — standard -->
-      <a href="/apps/abhinidra/" class="app-card app-card--standard-2" style="--accent:#6366f1" aria-label="AbhiNidra — view app">
+      <article class="app-card app-card--standard-2" style="--accent:#6366f1">
         <div class="app-card__border-glow" aria-hidden="true"></div>
-        <div class="app-card__initial">AN</div>
+        <img src="/apps/abhinidra/assets/applogo.png" alt="" class="app-card__icon" width="52" height="52" loading="lazy">
         <div class="app-card__badge">Sleep · Sounds</div>
         <h3 class="app-card__name">AbhiNidra</h3>
         <p class="app-card__tagline">Sleep sounds with adaptive volume. Your sleep is private.</p>
@@ -169,16 +189,22 @@
           <li>50+ Sleep Sounds</li>
           <li>Adaptive Volume</li>
         </ul>
-        <div class="app-card__cta">
-          Explore<span class="sr-only"> AbhiNidra</span>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="app-card__actions">
+          <a href="/apps/abhinidra/" class="app-card__cta">
+            Explore<span class="sr-only"> AbhiNidra</span>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.abhilabs.abhinidra" class="app-card__play-link" target="_blank" rel="noopener noreferrer" aria-label="Get AbhiNidra on Google Play">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 1l18 11L3 23V1z"/></svg>
+            Google Play
+          </a>
         </div>
-      </a>
+      </article>
 
       <!-- AI QR Barcode — standard -->
-      <a href="/apps/ai-qr-barcode/" class="app-card app-card--standard-3" style="--accent:#0d9488" aria-label="AI QR Barcode — view app">
+      <article class="app-card app-card--standard-3" style="--accent:#0d9488">
         <div class="app-card__border-glow" aria-hidden="true"></div>
-        <div class="app-card__initial">QR</div>
+        <img src="/apps/ai-qr-barcode/assets/applogo.png" alt="" class="app-card__icon" width="52" height="52" loading="lazy">
         <div class="app-card__badge">Scanner · AI</div>
         <h3 class="app-card__name">AI QR Barcode</h3>
         <p class="app-card__tagline">Every code format. AI safety check. All on-device.</p>
@@ -186,19 +212,38 @@
           <li>ML Kit Safety Verify</li>
           <li>Create QR Codes</li>
         </ul>
-        <div class="app-card__cta">
-          Explore<span class="sr-only"> AI QR Barcode</span>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="app-card__actions">
+          <a href="/apps/ai-qr-barcode/" class="app-card__cta">
+            Explore<span class="sr-only"> AI QR Barcode</span>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.abhilabs.aiqrbarcodescanner" class="app-card__play-link" target="_blank" rel="noopener noreferrer" aria-label="Get AI QR Barcode on Google Play">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 1l18 11L3 23V1z"/></svg>
+            Google Play
+          </a>
         </div>
-      </a>
+      </article>
 
     </div>
   </section>
 
+  <div class="play-dev-cta">
+    <a href="https://play.google.com/store/apps/dev?id=7474823741453655915" class="play-dev-cta__link" target="_blank" rel="noopener noreferrer">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 1l18 11L3 23V1z"/></svg>
+      See all Abhi Labs apps on Google Play
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+
 </main>
 
 <footer class="site-footer" role="contentinfo">
+  <img src="/assets/developer_logo.png" alt="" class="footer-logo" width="28" height="28" aria-hidden="true">
   <p class="footer-copy">© 2026 Abhi Labs. Bangalore, India. · <a href="mailto:contact@abhilabs.app">contact@abhilabs.app</a></p>
+  <a href="https://play.google.com/store/apps/dev?id=7474823741453655915" class="footer-play-link" target="_blank" rel="noopener noreferrer" aria-label="Abhi Labs on Google Play">
+    <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 1l18 11L3 23V1z"/></svg>
+    Google Play Developer Page
+  </a>
 </footer>
 
 <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
