@@ -311,8 +311,11 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
   display: none;
   position: fixed;
   top: 64px; left: 0; right: 0;
+  width: 100vw;
   z-index: 99;
   background: var(--nav-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
