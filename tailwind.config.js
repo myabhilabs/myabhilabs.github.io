@@ -5,7 +5,7 @@ module.exports = {
     './about/**/*.html',
     './apps/**/*.html',
     './privacy/**/*.html',
-    './*.html',
+    './contact/**/*.html',
   ],
   theme: {
     extend: {
