@@ -212,10 +212,17 @@ html[data-theme="light"] {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+/* backdrop-filter on pseudo-element so it never creates a containing block
+   for position:fixed children (WebKit/Safari bug) */
+.site-header::before {
+  content: '';
+  position: absolute; inset: 0;
   background: var(--nav-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255,255,255,0.04);
+  z-index: -1;
 }
 .nav-container {
   max-width: 1200px;
@@ -303,8 +310,8 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
   .theme-toggle { margin-left: auto; }
   .nav-hamburger { display: flex; }
   .nav-links {
-    display: none; position: absolute;
-    top: 100%; left: 0; right: 0;
+    display: none; position: fixed;
+    top: 64px; left: 0; right: 0;
     z-index: 99;
     background: var(--nav-bg);
     backdrop-filter: blur(12px);
