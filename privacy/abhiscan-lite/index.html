@@ -1,127 +1,325 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="app-abhiscan">
 <head>
   <meta charset="UTF-8">
   <link rel="icon" type="image/png" href="/assets/developer_logo.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy — AbhiScan Lite | Abhi Labs</title>
   <meta name="description" content="AbhiScan Lite privacy policy. We collect no data. All scanning happens locally on your device.">
+  <link rel="canonical" href="https://abhilabs.app/privacy/abhiscan-lite/">
   <meta property="og:title" content="Privacy Policy — AbhiScan Lite | Abhi Labs">
   <meta property="og:description" content="AbhiScan Lite privacy policy. We collect no data. All scanning happens locally on your device.">
   <meta property="og:url" content="https://abhilabs.app/privacy/abhiscan-lite/">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary">
-  <link rel="canonical" href="https://abhilabs.app/privacy/abhiscan-lite/">
   <meta property="og:image" content="https://abhilabs.app/assets/developer_logo.png">
   <meta name="twitter:image" content="https://abhilabs.app/assets/developer_logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" onload="this.rel='stylesheet'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+  <script>!function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}();</script>
   <link rel="stylesheet" href="/styles/output.css">
 </head>
-<body>
+<body class="has-noise">
 <a href="#main-content" class="skip-link">Skip to content</a>
+
+<div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
+
 <header class="site-header" role="banner">
   <nav class="nav-container" aria-label="Main navigation">
     <a href="/" class="nav-logo" aria-label="Abhi Labs home">
-      <span class="nav-logo-mark">AL</span>
+      <img src="/assets/developer_logo.png" alt="Abhi Labs logo" class="nav-logo-mark" width="32" height="32">
       <span class="nav-logo-text">Abhi Labs</span>
     </a>
     <ul class="nav-links" role="list" id="nav-menu">
       <li><a href="/" class="nav-link">Portfolio</a></li>
       <li><a href="/about/" class="nav-link">About</a></li>
-      <li><a href="mailto:myabhilabs@gmail.com" class="nav-cta">Contact</a></li>
+      <li><a href="/contact/" class="nav-cta">Contact</a></li>
     </ul>
-    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+    <button class="theme-toggle" aria-label="Switch to dark mode">
+      <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
         <path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
       </svg>
     </button>
   </nav>
 </header>
+
 <main id="main-content">
-  <div class="prose-page">
-    <h1>Privacy Policy</h1>
-    <p class="updated">AbhiScan Lite · Last updated: June 2026</p>
 
-    <h2>Summary</h2>
-    <p>AbhiScan Lite is built on a local-first architecture. Your scanned images, generated PDFs, and extracted text never leave your device unless you explicitly share them. We do not own, operate, or rent servers to store your documents.</p>
+  <section class="privacy-hero" aria-label="Privacy overview">
+    <div class="privacy-hero__orb" aria-hidden="true"></div>
+    <div class="privacy-hero__inner">
+      <img src="/apps/abhi-scan-lite/assets/play_store_icon.png" alt="AbhiScan Lite app icon" class="privacy-hero__icon" width="72" height="72">
+      <p class="privacy-hero__label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+        Privacy Policy
+      </p>
+      <h1 class="privacy-hero__title">AbhiScan Lite</h1>
+      <p class="privacy-hero__promise">Zero data collected. Every scan and PDF stays entirely on your device.</p>
 
-    <h2>Data We Collect</h2>
-    <p>We do not collect personal data. No account is required to use AbhiScan Lite. The following clarifies exactly what stays on your device:</p>
-    <ul>
-      <li>Scanned images are processed locally using on-device edge detection</li>
-      <li>OCR text extraction is stored in a local SQLite database on your device</li>
-      <li>Generated PDF files are saved via the Android Storage Access Framework at your direction</li>
-      <li>No data is transmitted to any server we operate</li>
-    </ul>
+      <div class="privacy-atglance" aria-label="Privacy at a glance">
+        <div class="privacy-atglance__card">
+          <div class="privacy-atglance__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/></svg></div>
+          <p class="privacy-atglance__value">On-device only</p>
+          <p class="privacy-atglance__label">Documents</p>
+        </div>
+        <div class="privacy-atglance__card">
+          <div class="privacy-atglance__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div>
+          <p class="privacy-atglance__value">Zero</p>
+          <p class="privacy-atglance__label">Cloud uploads</p>
+        </div>
+        <div class="privacy-atglance__card">
+          <div class="privacy-atglance__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <p class="privacy-atglance__value">Not required</p>
+          <p class="privacy-atglance__label">Account</p>
+        </div>
+      </div>
 
-    <h2>Camera Permission</h2>
-    <p>AbhiScan Lite requests camera access solely to scan documents. All image processing happens on-device. Camera images are never transmitted to any server.</p>
-
-    <h2>Storage Permission</h2>
-    <p>PDF files and scanned images are saved to your device's local storage via the Android Storage Access Framework. We access only the files you explicitly open or save through the app.</p>
-
-    <h2>Advertising</h2>
-    <p>AbhiScan Lite displays ads via <strong>Google AdMob</strong>. AdMob may collect device identifiers (Android Advertising ID), IP address, and ad interaction data to measure ad performance and serve relevant ads.</p>
-    <ul>
-      <li><strong>EEA &amp; UK users:</strong> A consent form is presented at first launch via Google's User Messaging Platform (UMP). Personalized ads require your explicit consent.</li>
-      <li><strong>California residents:</strong> You can opt out of personalized ads by resetting your Advertising ID in Android Settings → Privacy → Ads.</li>
-      <li>You can review Google's privacy policy at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</li>
-    </ul>
-
-    <h2>Crash Reporting</h2>
-    <p>Anonymized crash reports are collected via Google Play Vitals and Firebase Crashlytics to help us fix bugs. These reports contain device model, OS version, and stack traces — never your documents, scanned text, or personal data.</p>
-
-    <h2>Your Rights</h2>
-    <p><strong>EEA &amp; UK (GDPR):</strong> You have the right to access, correct, or delete your data; to withdraw advertising consent at any time; and to lodge a complaint with your local data protection authority.</p>
-    <p><strong>California (CCPA/CPRA):</strong> You have the right to know what data is collected about you, to opt out of the sale of personal information (we do not sell data), and to request deletion of data held by our advertising partners.</p>
-
-    <h2>Data Deletion</h2>
-    <p>Since AbhiScan Lite stores everything locally, you are in full control:</p>
-    <ul>
-      <li>Delete individual scans or PDFs directly within the app</li>
-      <li>Clear all app data via Android Settings → Apps → AbhiScan Lite → Storage → Clear Data</li>
-      <li>Uninstall the app to remove all app data permanently</li>
-    </ul>
-    <p>There is no remote account to delete. For advertising data held by Google, reset your Android Advertising ID in Settings → Privacy → Ads.</p>
-
-    <h2>Contact</h2>
-    <p>Questions or privacy requests? Email us at <a href="mailto:contact@abhilabs.app">contact@abhilabs.app</a>.</p>
-  </div>
-</main>
-<footer class="site-footer" role="contentinfo">
-  <div class="footer-container">
-    <div class="footer-brand">
-      <a href="/" class="nav-logo" aria-label="Abhi Labs home">
-        <span class="nav-logo-mark">AL</span>
-        <span class="nav-logo-text">Abhi Labs</span>
-      </a>
-      <p class="footer-tagline">Tomorrow's Tech Today</p>
+      <div class="privacy-badges">
+        <span class="privacy-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>No cloud servers</span>
+        <span class="privacy-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>No personal data collected</span>
+        <span class="privacy-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>5 MB lightweight install</span>
+      </div>
+      <p class="privacy-hero__updated">Effective: June 29, 2026 · Last updated: June 29, 2026</p>
     </div>
-    <nav class="footer-links" aria-label="Footer navigation">
-      <a href="/" class="footer-link">Portfolio</a>
-      <a href="/about/" class="footer-link">About</a>
-      <a href="mailto:myabhilabs@gmail.com" class="footer-link">Contact</a>
-    </nav>
-    <p class="footer-copy">© 2026 Abhi Labs. Bangalore, India.</p>
+  </section>
+
+  <nav class="privacy-chips" id="privacy-chips" aria-label="Jump to section">
+    <a href="#summary" class="privacy-chip">Summary</a>
+    <a href="#data" class="privacy-chip">Data</a>
+    <a href="#permissions" class="privacy-chip">Permissions</a>
+    <a href="#advertising" class="privacy-chip">Advertising</a>
+    <a href="#crash" class="privacy-chip">Crash Reports</a>
+    <a href="#rights" class="privacy-chip">Your Rights</a>
+    <a href="#deletion" class="privacy-chip">Deletion</a>
+    <a href="#contact" class="privacy-chip">Contact</a>
+  </nav>
+
+  <div class="privacy-layout">
+    <aside class="privacy-toc" aria-label="Table of contents">
+      <p class="privacy-toc__label">Contents</p>
+      <a href="#summary">Summary</a>
+      <a href="#data">Data We Collect</a>
+      <a href="#permissions">Permissions</a>
+      <a href="#advertising">Advertising</a>
+      <a href="#crash">Crash Reporting</a>
+      <a href="#rights">Your Rights</a>
+      <a href="#deletion">Data Deletion</a>
+      <a href="#contact">Contact</a>
+    </aside>
+
+    <div class="privacy-content">
+
+      <section class="privacy-section" id="summary">
+        <span class="privacy-section__num" aria-hidden="true">01</span>
+        <div class="privacy-section__head">
+          <span class="privacy-section__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6l7-3z"/></svg></span>
+          <h2 class="privacy-section__title">Summary</h2>
+        </div>
+        <p>AbhiScan Lite is built on a local-first architecture. Your scanned images, generated PDFs, and extracted text never leave your device unless you explicitly share them. We do not own, operate, or rent servers to store your documents.</p>
+        <div class="privacy-callout" role="note">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+          <p>We cannot access your documents — no server exists that could receive them.</p>
+        </div>
+      </section>
+
+      <section class="privacy-section" id="data">
+        <span class="privacy-section__num" aria-hidden="true">02</span>
+        <div class="privacy-section__head">
+          <span class="privacy-section__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></span>
+          <h2 class="privacy-section__title">Data We Collect</h2>
+        </div>
+        <p>We do not collect personal data. No account is required. The following clarifies exactly what stays on your device:</p>
+        <ul>
+          <li>Scanned images are processed locally using on-device edge detection</li>
+          <li>OCR text extraction is stored in a local SQLite database on your device</li>
+          <li>Generated PDF files are saved via the Android Storage Access Framework at your direction</li>
+          <li>No data is transmitted to any server we operate</li>
+        </ul>
+      </section>
+
+      <section class="privacy-section" id="permissions">
+        <span class="privacy-section__num" aria-hidden="true">03</span>
+        <div class="privacy-section__head">
+          <span class="privacy-section__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+          <h2 class="privacy-section__title">Permissions</h2>
+        </div>
+        <p>AbhiScan Lite requests two Android permissions. Here is exactly what each is used for — and what it cannot do.</p>
+        <table class="privacy-table" aria-label="App permissions">
+          <thead>
+            <tr><th>Permission</th><th>Purpose</th><th>Cannot do</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Camera</td>
+              <td>Scan documents. All image processing happens on-device.</td>
+              <td><span class="privacy-table__cannot">Transmit images to any server</span></td>
+            </tr>
+            <tr>
+              <td>Storage</td>
+              <td>Save PDFs and scanned images to your device via the Android Storage Access Framework.</td>
+              <td><span class="privacy-table__cannot">Access files outside what you explicitly open</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="privacy-section" id="advertising">
+        <span class="privacy-section__num" aria-hidden="true">04</span>
+        <div class="privacy-section__head">
+          <span class="privacy-section__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span>
+          <h2 class="privacy-section__title">Advertising</h2>
+        </div>
+        <div class="privacy-callout privacy-callout--warn" role="note">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <p>AbhiScan Lite displays ads via Google AdMob — a third party that collects its own data. This is the only data collection that occurs.</p>
+        </div>
+        <p style="margin-top:0.75rem">AdMob may collect device identifiers (Android Advertising ID), IP address, and ad interaction data to measure ad performance and serve relevant ads.</p>
+        <ul>
+          <li><strong>EEA &amp; UK users:</strong> A consent form is presented at first launch via Google's User Messaging Platform (UMP). Personalized ads require your explicit consent.</li>
+          <li><strong>California residents:</strong> You can opt out of personalized ads by resetting your Advertising ID in Android Settings → Privacy → Ads.</li>
+          <li>Review Google's privacy policy at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</li>
+        </ul>
+      </section>
+
+      <section class="privacy-section" id="crash">
+        <span class="privacy-section__num" aria-hidden="true">05</span>
+        <div class="privacy-section__head">
+          <span class="privacy-section__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span>
+          <h2 class="privacy-section__title">Crash Reporting</h2>
+        </div>
+        <p>Anonymized crash reports are collected via Google Play Vitals and Firebase Crashlytics to help us fix bugs. These reports contain device model, OS version, and stack traces — never your documents, scanned text, or personal data.</p>
+      </section>
+
+      <section class="privacy-section" id="rights">
+        <span class="privacy-section__num" aria-hidden="true">06</span>
+        <div class="privacy-section__head">
+          <span class="privacy-section__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M6 8h12M6 8l-3 6a3 3 0 0 0 6 0zM18 8l-3 6a3 3 0 0 0 6 0z"/><path d="M8 21h8"/></svg></span>
+          <h2 class="privacy-section__title">Your Rights</h2>
+        </div>
+        <p><strong>EEA &amp; UK (GDPR):</strong> You have the right to access, correct, or delete your data; to withdraw advertising consent at any time; and to lodge a complaint with your local data protection authority.</p>
+        <p><strong>California (CCPA/CPRA):</strong> You have the right to know what data is collected about you, to opt out of the sale of personal information (we do not sell data), and to request deletion of data held by our advertising partners.</p>
+      </section>
+
+      <section class="privacy-section" id="deletion">
+        <span class="privacy-section__num" aria-hidden="true">07</span>
+        <div class="privacy-section__head">
+          <span class="privacy-section__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/></svg></span>
+          <h2 class="privacy-section__title">Data Deletion</h2>
+        </div>
+        <p>Since AbhiScan Lite stores everything locally, you are in full control:</p>
+        <ul>
+          <li>Delete individual scans or PDFs directly within the app</li>
+          <li>Clear all app data via Android Settings → Apps → AbhiScan Lite → Storage → Clear Data</li>
+          <li>Uninstall the app to remove all app data permanently</li>
+        </ul>
+        <p>There is no remote account to delete. For advertising data held by Google, reset your Android Advertising ID in Settings → Privacy → Ads.</p>
+        <div class="privacy-callout" role="note">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+          <p>Local deletion is immediate and permanent. We hold no copy to recover from.</p>
+        </div>
+      </section>
+
+      <section class="privacy-section" id="contact">
+        <span class="privacy-section__num" aria-hidden="true">08</span>
+        <div class="privacy-section__head">
+          <span class="privacy-section__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg></span>
+          <h2 class="privacy-section__title">Contact</h2>
+        </div>
+        <p>Questions or privacy requests? Email us at <a href="mailto:contact@abhilabs.app">contact@abhilabs.app</a>.</p>
+      </section>
+
+    </div>
   </div>
+
+  <div class="privacy-app-cta">
+    <div class="privacy-app-cta__card">
+      <img src="/apps/abhi-scan-lite/assets/play_store_icon.png" alt="AbhiScan Lite app icon" class="privacy-app-cta__icon" width="64" height="64">
+      <p class="privacy-app-cta__name">AbhiScan Lite</p>
+      <p class="privacy-app-cta__tagline">Full scanner power in a featherweight 5 MB install. Turn on airplane mode — it still works.</p>
+      <div class="privacy-app-cta__actions">
+        <a href="https://play.google.com/store/apps/details?id=com.abhilabs.pdfscanner.lite" class="privacy-app-cta__play" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 1l18 11L3 23V1z"/></svg>
+          Get on Google Play
+        </a>
+        <a href="/apps/abhi-scan-lite/" class="privacy-app-cta__back">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M12 7H2M6 3l-4 4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          View app page
+        </a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-brand">
+    <img src="/assets/developer_logo.png" alt="" class="footer-logo" width="24" height="24" aria-hidden="true">
+    <p class="footer-copy">© 2026 Abhi Labs. Bangalore, India. · <a href="mailto:contact@abhilabs.app">contact@abhilabs.app</a></p>
+  </div>
+  <a href="https://play.google.com/store/apps/dev?id=7474823741453655915" class="footer-play-link" target="_blank" rel="noopener noreferrer" aria-label="Abhi Labs on Google Play">
+    <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 1l18 11L3 23V1z"/></svg>
+    Google Play Developer Page
+  </a>
 </footer>
+
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+  <a href="/" class="nav-link">Portfolio</a>
+  <a href="/about/" class="nav-link">About</a>
+  <a href="/contact/" class="nav-cta">Contact</a>
+</nav>
+
 <script>
   const btn = document.querySelector('.nav-hamburger');
-  const links = document.querySelector('.nav-links');
+  const mobileNav = document.querySelector('.mobile-nav');
   btn.addEventListener('click', () => {
     const open = btn.getAttribute('aria-expanded') === 'true';
     btn.setAttribute('aria-expanded', String(!open));
-    links.classList.toggle('nav-links--open');
+    mobileNav.classList.toggle('mobile-nav--open');
   });
   document.addEventListener('click', e => {
-    if (!e.target.closest('.nav-container')) {
+    if (!e.target.closest('.nav-container') && !e.target.closest('.mobile-nav')) {
       btn.setAttribute('aria-expanded', 'false');
-      links.classList.remove('nav-links--open');
+      mobileNav.classList.remove('mobile-nav--open');
     }
   });
+  (function () {
+    var toggle = document.querySelector('.theme-toggle');
+    if (!toggle) return;
+    function getTheme() { return document.documentElement.getAttribute('data-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); }
+    function applyTheme(t) { document.documentElement.setAttribute('data-theme', t); localStorage.setItem('theme', t); toggle.setAttribute('aria-label', t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'); }
+    toggle.addEventListener('click', function () { applyTheme(getTheme() === 'dark' ? 'light' : 'dark'); });
+    toggle.setAttribute('aria-label', getTheme() === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+  }());
+  (function () {
+    var bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    window.addEventListener('scroll', function () { var s = window.scrollY, d = document.documentElement.scrollHeight - window.innerHeight; bar.style.width = (d > 0 ? s / d * 100 : 0) + '%'; }, { passive: true });
+  }());
+  (function () {
+    var tocLinks = Array.prototype.slice.call(document.querySelectorAll('.privacy-toc a'));
+    var chipLinks = Array.prototype.slice.call(document.querySelectorAll('.privacy-chip'));
+    var sectionIds = tocLinks.map(function (a) { return a.getAttribute('href').slice(1); });
+    var sections = sectionIds.map(function (id) { return document.getElementById(id); });
+    if (!('IntersectionObserver' in window) || !sections.length) return;
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var idx = sections.indexOf(entry.target);
+        if (idx === -1) return;
+        var activeId = sectionIds[idx];
+        tocLinks.concat(chipLinks).forEach(function (l) { l.classList.toggle('is-active', l.getAttribute('href') === '#' + activeId); });
+        var chip = document.querySelector('.privacy-chip.is-active');
+        if (chip) chip.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      });
+    }, { rootMargin: '-96px 0px -60% 0px', threshold: 0 });
+    sections.forEach(function (s) { if (s) observer.observe(s); });
+  }());
 </script>
 </body>
 </html>
