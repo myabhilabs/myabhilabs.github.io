@@ -1458,4 +1458,30 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
   .privacy-atglance { max-width: 100%; }
 }
 
+/* ── More from Abhi Labs ──────────────────────────── */
+.more-apps {
+  padding: 2rem 2rem 3rem;
+  text-align: center;
+}
+.more-apps__inner { max-width: 700px; margin: 0 auto; }
+.more-apps__head {
+  font-size: 11px; font-weight: 700; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--text-3); margin-bottom: 1.25rem;
+}
+.more-apps__grid {
+  display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+}
+.more-apps__card {
+  display: flex; align-items: center; gap: 10px;
+  padding: .75rem 1.25rem;
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: var(--radius-md); text-decoration: none;
+  transition: border-color .2s, transform .15s;
+  text-align: left;
+}
+.more-apps__card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.more-apps__card img { border-radius: 10px; flex-shrink: 0; }
+.more-apps__name { font-size: .875rem; font-weight: 600; color: var(--text-1); }
+.more-apps__cat { font-size: .75rem; color: var(--text-3); margin-top: 1px; }
+
 } /* end @layer components */
