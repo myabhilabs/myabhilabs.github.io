@@ -83,6 +83,7 @@ html[data-theme="light"] {
 .app-lunavi   { --accent:#e11d48; --accent-hover:#be123c; --accent-subtle:rgba(225,29,72,0.12);  --accent-text:#e11d48; }
 .app-abhinidra{ --accent:#6366f1; --accent-hover:#4f46e5; --accent-subtle:rgba(99,102,241,0.12); --accent-text:#6366f1; }
 .app-ai-qr    { --accent:#0d9488; --accent-hover:#0a7a6e; --accent-subtle:rgba(13,148,136,0.12); --accent-text:#0d9488; }
+.app-abhinow  { --accent:#059669; --accent-hover:#047857; --accent-subtle:rgba(5,150,105,0.12);  --accent-text:#059669; }
 
 /* ── Base ──────────────────────────────────────────── */
 @layer base {
@@ -116,6 +117,10 @@ html[data-theme="light"] {
 }
 .app-abhinidra body {
   background-image: radial-gradient(800px circle at 80% -10%, rgba(99,102,241,0.15), transparent 70%);
+  background-attachment: fixed;
+}
+.app-abhinow body {
+  background-image: radial-gradient(800px circle at 80% -10%, rgba(5,150,105,0.15), transparent 70%);
   background-attachment: fixed;
 }
 
@@ -1380,6 +1385,15 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
 }
 .privacy-section a { color: var(--accent); font-weight: 500; }
 .privacy-section strong { color: var(--text-1); font-weight: 600; }
+.privacy-subhead {
+  font-size: 14px; font-weight: 700; color: var(--text-1);
+  margin: 1.25rem 0 0.35rem; letter-spacing: -0.01em;
+}
+.privacy-subhead:first-of-type { margin-top: 0.25rem; }
+.privacy-note {
+  font-size: 13px !important; color: var(--text-3) !important;
+  border-top: 1px solid var(--border); padding-top: 0.75rem; margin-top: 1rem !important;
+}
 
 /* Key fact callout */
 .privacy-callout {
