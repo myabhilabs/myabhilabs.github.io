@@ -496,7 +496,7 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-areas:
-    "f1 f1 f1 f2 f2 f2"
+    "f1 f1 f2 f2 f3 f3"
     "s1 s1 s2 s2 s3 s3";
   gap: 1px;
   background: var(--border);
@@ -506,6 +506,7 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
 }
 .app-card--featured-1 { grid-area: f1; }
 .app-card--featured-2 { grid-area: f2; }
+.app-card--featured-3 { grid-area: f3; }
 .app-card--standard-1 { grid-area: s1; }
 .app-card--standard-2 { grid-area: s2; }
 .app-card--standard-3 { grid-area: s3; }
@@ -642,14 +643,14 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
       "f1 f2"
-      "s1 s2"
-      "s3 s3";
+      "f3 s1"
+      "s2 s3";
   }
 }
 @media (max-width: 600px) {
   .app-grid {
     grid-template-columns: 1fr;
-    grid-template-areas: "f1" "f2" "s1" "s2" "s3";
+    grid-template-areas: "f1" "f2" "f3" "s1" "s2" "s3";
   }
   .app-grid-section { padding: 0 0 4rem; }
 }
