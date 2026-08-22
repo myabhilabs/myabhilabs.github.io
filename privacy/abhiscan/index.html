@@ -5,10 +5,10 @@
   <link rel="icon" type="image/png" href="/assets/developer_logo.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy — AbhiScan | Abhi Labs</title>
-  <meta name="description" content="AbhiScan privacy policy. We collect no data. All scanning happens locally on your device.">
+  <meta name="description" content="AbhiScan privacy policy. No ads, no trackers, no data collection. All scanning happens locally on your device.">
   <link rel="canonical" href="https://abhilabs.app/privacy/abhiscan/">
   <meta property="og:title" content="Privacy Policy — AbhiScan | Abhi Labs">
-  <meta property="og:description" content="AbhiScan privacy policy. We collect no data. All scanning happens locally on your device.">
+  <meta property="og:description" content="AbhiScan privacy policy. No ads, no trackers, no data collection. All scanning happens locally on your device.">
   <meta property="og:url" content="https://abhilabs.app/privacy/abhiscan/">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary">
@@ -61,7 +61,7 @@
         Privacy Policy
       </p>
       <h1 class="privacy-hero__title">AbhiScan</h1>
-      <p class="privacy-hero__promise">Zero data collected. Every scan, PDF, and OCR search happens entirely on your device.</p>
+      <p class="privacy-hero__promise">Zero data collected. No ads, no trackers, no third-party SDKs. Every scan, PDF, and OCR search happens entirely on your device.</p>
 
       <div class="privacy-atglance" aria-label="Privacy at a glance">
         <div class="privacy-atglance__card">
@@ -84,9 +84,10 @@
       <div class="privacy-badges">
         <span class="privacy-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>No cloud servers</span>
         <span class="privacy-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>No personal data collected</span>
+        <span class="privacy-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>No ads or trackers</span>
         <span class="privacy-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>OpenCV on-device processing</span>
       </div>
-      <p class="privacy-hero__updated">Effective: June 29, 2026 · Last updated: June 29, 2026</p>
+      <p class="privacy-hero__updated">Effective: August 23, 2026 · Last updated: August 23, 2026</p>
     </div>
   </section>
 
@@ -95,11 +96,11 @@
     <a href="#summary" class="privacy-chip">Summary</a>
     <a href="#data" class="privacy-chip">Data</a>
     <a href="#permissions" class="privacy-chip">Permissions</a>
-    <a href="#advertising" class="privacy-chip">Advertising</a>
-    <a href="#crash" class="privacy-chip">Crash Reports</a>
+    <a href="#diagnostics" class="privacy-chip">Diagnostics</a>
     <a href="#rights" class="privacy-chip">Your Rights</a>
     <a href="#deletion" class="privacy-chip">Deletion</a>
     <a href="#contact" class="privacy-chip">Contact</a>
+    <a href="#changes" class="privacy-chip">Changes</a>
   </nav>
 
   <div class="privacy-layout">
@@ -108,11 +109,11 @@
       <a href="#summary">Summary</a>
       <a href="#data">Data We Collect</a>
       <a href="#permissions">Permissions</a>
-      <a href="#advertising">Advertising</a>
-      <a href="#crash">Crash Reporting</a>
+      <a href="#diagnostics">Diagnostics</a>
       <a href="#rights">Your Rights</a>
       <a href="#deletion">Data Deletion</a>
       <a href="#contact">Contact</a>
+      <a href="#changes">Changes</a>
     </aside>
 
     <div class="privacy-content">
@@ -123,7 +124,7 @@
           <span class="privacy-section__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6l7-3z"/></svg></span>
           <h2 class="privacy-section__title">Summary</h2>
         </div>
-        <p>AbhiScan is built on a local-first architecture. Your scanned documents, PDFs, and extracted text never leave your device unless you explicitly share them. We do not own, operate, or rent servers to store your documents.</p>
+        <p>AbhiScan is built on a local-first architecture. Your scanned documents, PDFs, and extracted text never leave your device unless you explicitly share them. We do not own, operate, or rent servers to store your documents. No advertising, analytics, or tracking SDK is bundled in the app.</p>
         <div class="privacy-callout" role="note">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
           <p>We cannot access your documents — no server exists that could receive them.</p>
@@ -142,6 +143,7 @@
           <li>OCR text extraction is stored in a local SQLite full-text search database on your device</li>
           <li>Generated PDF files are saved via the Android Storage Access Framework at your direction</li>
           <li>No data is transmitted to any server we operate</li>
+          <li>No advertising or analytics SDK is present — the app never reads your Android Advertising ID</li>
         </ul>
       </section>
 
@@ -175,45 +177,29 @@
         </table>
       </section>
 
-      <section class="privacy-section" id="advertising">
+      <section class="privacy-section" id="diagnostics">
         <span class="privacy-section__num" aria-hidden="true">04</span>
         <div class="privacy-section__head">
-          <span class="privacy-section__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span>
-          <h2 class="privacy-section__title">Advertising</h2>
-        </div>
-        <div class="privacy-callout privacy-callout--warn" role="note">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          <p>AbhiScan displays ads via Google AdMob — a third party that collects its own data. This is the only data collection that occurs.</p>
-        </div>
-        <p style="margin-top:0.75rem">AdMob may collect device identifiers (Android Advertising ID), IP address, and ad interaction data to measure ad performance and serve relevant ads.</p>
-        <ul>
-          <li><strong>EEA &amp; UK users:</strong> A consent form is presented at first launch via Google's User Messaging Platform (UMP). Personalized ads require your explicit consent.</li>
-          <li><strong>California residents:</strong> You can opt out of personalized ads by resetting your Advertising ID in Android Settings → Privacy → Ads.</li>
-          <li>Review Google's privacy policy at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</li>
-        </ul>
-      </section>
-
-      <section class="privacy-section" id="crash">
-        <span class="privacy-section__num" aria-hidden="true">05</span>
-        <div class="privacy-section__head">
           <span class="privacy-section__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span>
-          <h2 class="privacy-section__title">Crash Reporting</h2>
+          <h2 class="privacy-section__title">Diagnostics</h2>
         </div>
-        <p>Anonymized crash reports are collected via Google Play Vitals and Firebase Crashlytics to help us fix bugs. These reports contain device model, OS version, and stack traces — never your documents, scanned text, or personal data.</p>
+        <p>AbhiScan embeds no crash-reporting or analytics SDK. Google Play collects anonymized crash and performance data (Android Vitals) for every app distributed through the Play Store. That collection is performed by Google at the platform level, not by code we ship, and the reports contain device model, OS version, and stack traces — never your documents, scanned text, or personal data.</p>
+        <p>This data is only shared by devices where the owner opted in to Android's usage and diagnostics sharing; you can change that in Android Settings → Google → Usage &amp; diagnostics (on some devices, Settings → Privacy → Usage &amp; diagnostics). Google's handling of that data is described in its <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">privacy policy</a>.</p>
       </section>
 
       <section class="privacy-section" id="rights">
-        <span class="privacy-section__num" aria-hidden="true">06</span>
+        <span class="privacy-section__num" aria-hidden="true">05</span>
         <div class="privacy-section__head">
           <span class="privacy-section__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M6 8h12M6 8l-3 6a3 3 0 0 0 6 0zM18 8l-3 6a3 3 0 0 0 6 0z"/><path d="M8 21h8"/></svg></span>
           <h2 class="privacy-section__title">Your Rights</h2>
         </div>
-        <p><strong>EEA &amp; UK (GDPR):</strong> You have the right to access, correct, or delete your data; to withdraw advertising consent at any time; and to lodge a complaint with your local data protection authority.</p>
-        <p><strong>California (CCPA/CPRA):</strong> You have the right to know what data is collected about you, to opt out of the sale of personal information (we do not sell data), and to request deletion of data held by our advertising partners.</p>
+        <p>AbhiScan processes no personal data, so most data-subject requests have nothing to act on — there is no profile, account, or identifier tied to you anywhere in our systems.</p>
+        <p><strong>EEA &amp; UK (GDPR):</strong> No personal data is collected, so no consent form is shown and no legal basis for processing is required. You retain the right to lodge a complaint with your local data protection authority.</p>
+        <p><strong>California (CCPA/CPRA):</strong> We do not collect, sell, or share personal information, and no advertising partner holds data obtained through this app. Requests to know, delete, or opt out have no data to apply to.</p>
       </section>
 
       <section class="privacy-section" id="deletion">
-        <span class="privacy-section__num" aria-hidden="true">07</span>
+        <span class="privacy-section__num" aria-hidden="true">06</span>
         <div class="privacy-section__head">
           <span class="privacy-section__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/></svg></span>
           <h2 class="privacy-section__title">Data Deletion</h2>
@@ -224,7 +210,7 @@
           <li>Clear all app data via Android Settings → Apps → AbhiScan → Storage → Clear Data</li>
           <li>Uninstall the app to remove all app data permanently</li>
         </ul>
-        <p>There is no remote account to delete. For advertising data held by Google, reset your Android Advertising ID in Settings → Privacy → Ads.</p>
+        <p>There is no remote account to delete, and no advertising or analytics partner holds data from this app.</p>
         <div class="privacy-callout" role="note">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
           <p>Local deletion is immediate and permanent. We hold no copy to recover from.</p>
@@ -232,12 +218,24 @@
       </section>
 
       <section class="privacy-section" id="contact">
-        <span class="privacy-section__num" aria-hidden="true">08</span>
+        <span class="privacy-section__num" aria-hidden="true">07</span>
         <div class="privacy-section__head">
           <span class="privacy-section__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg></span>
           <h2 class="privacy-section__title">Contact</h2>
         </div>
         <p>Questions or privacy requests? Email us at <a href="mailto:contact@abhilabs.app">contact@abhilabs.app</a>.</p>
+      </section>
+
+      <section class="privacy-section" id="changes">
+        <span class="privacy-section__num" aria-hidden="true">08</span>
+        <div class="privacy-section__head">
+          <span class="privacy-section__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="9"/></svg></span>
+          <h2 class="privacy-section__title">Changes to This Policy</h2>
+        </div>
+        <ul>
+          <li><strong>August 23, 2026</strong> — Advertising removed from AbhiScan. The Google AdMob SDK and the User Messaging Platform (UMP) consent form were removed from the app. The app no longer reads the Android Advertising ID, and no third-party advertising partner receives any data from it. The Firebase Crashlytics SDK was also removed; see Diagnostics above.</li>
+          <li><strong>June 29, 2026</strong> — Initial policy published.</li>
+        </ul>
       </section>
 
     </div>
