@@ -29,7 +29,7 @@ We apply the same rigor found in world-class consumer products to every line of 
 *Your health data. Only yours. No cloud, no compromise.*
 - **🔒 Privacy Sovereign:** No account required. Zero background network activity.
 - **📊 Adaptive Engine:** Precise period and fertility predictions that learn from your rhythm.
-- **🛡️ Security Layer:** Biometric lock with an offline-only emergency panic wipe.
+- **🛡️ Security Layer:** Biometric lock with an offline recovery key.
 - **🎨 Luna Rose UI:** Modern Material 3 design with OLED-friendly dark modes.
 - [**Explore Landing Page**](./apps/lunavi/index.html) • [**Download on Google Play**](https://play.google.com/store/apps/details?id=com.abhilabs.lunavi)
 
