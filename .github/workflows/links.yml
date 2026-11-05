@@ -1,0 +1,28 @@
+name: Check links
+
+# Google Play rejects Terms of Service / Privacy URLs that don't load, so
+# every PR is checked for broken internal links and #section anchors.
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check internal links and anchors
+        uses: lycheeverse/lychee-action@v2
+        with:
+          fail: true
+          args: >-
+            --offline
+            --include-fragments
+            --no-progress
+            --root-dir "${{ github.workspace }}"
+            --exclude-path node_modules
+            --exclude-path graphify-out
+            --exclude-path docs
+            './**/*.html'
