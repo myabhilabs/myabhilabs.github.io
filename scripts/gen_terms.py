@@ -11,8 +11,10 @@ The page shell (the <head>, header, footer and scripts) is read from the
 current terms/abhinow/index.html, so site-wide footer or header changes made
 there carry over to every page on the next run.
 
-When you change a page's wording, update DATE and add a line to that app's
-"history" list so the "Changes to These Terms" section stays accurate.
+When you change one app's wording, set that app's "updated" date and add a
+line to its "history" list so the "Changes to These Terms" section stays
+accurate. DATE is the date every page took effect; change it only for a
+change that applies to every app.
 """
 import re, sys, pathlib
 
@@ -22,7 +24,9 @@ DATE = "November 5, 2026"
 
 head_end = TPL.index('  <section class="privacy-hero"')
 tail_start = TPL.index("</main>")
-HEAD, TAIL = TPL[:head_end], TPL[tail_start:]
+# Trimmed to a fixed ending: the template is itself a generated page, so an
+# untrimmed slice gained one blank line on every run.
+HEAD, TAIL = TPL[:head_end].rstrip("\n") + "\n\n\n\n", TPL[tail_start:]
 
 # Reuse section icons from the template, keyed by section id.
 ICON = dict(re.findall(
@@ -182,7 +186,7 @@ def app_lunavi(a):
             f"{n} also does not guarantee conception. If you are trying to conceive or to avoid pregnancy, talk to a healthcare professional about suitable methods.")),
         ("accuracy", "Accuracy and Your Logs", "Accuracy", "disclaimers", P(
             "Predictions depend on what you enter. Missing or incorrect entries reduce accuracy. The OPK strip scanner reads a photo of your test and can misread it; always read the test according to its own instructions.",
-            "Reminders, including pill reminders, are created on your device and can be delayed or blocked by battery settings, notification settings or restarts. Do not rely on them alone to take medication on time.")),
+            "Reminders are created on your device and can be delayed or blocked by battery settings, notification settings or restarts, so do not rely on them alone.")),
         ("app-lock", "App Lock, PIN and Recovery Key", "App Lock", "lock", P(
             "If you turn on App Lock, keep your PIN and recovery key safe. There is no account and no server, so if you lose both you may be unable to open your data, and we cannot reset it for you.")),
         ("export", "Export and Sharing", "Export", "export", P(
@@ -259,7 +263,10 @@ APPS = [
     dict(slug="lunavi", app="lunavi", name="Lunavi", cls="app-lunavi",
          logo="/apps/lunavi/assets/applogo.png", pkg="com.abhilabs.lunavi",
          desc="period and ovulation tracker", sections=app_lunavi,
-         tagline="Your cycle, your data. Ovulation predictions that stay on your device.", history=FIRST),
+         tagline="Your cycle, your data. Ovulation predictions that stay on your device.",
+         updated="November 15, 2026",
+         history=[("November 15, 2026", "Removed the mention of pill reminders: Lunavi no longer has them from version 2.1.0."),
+                  (DATE, "Initial terms published.")]),
 ]
 
 PRIV_ICON = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6l7-3z"/></svg>'
@@ -298,7 +305,7 @@ def build(a):
       </p>
       <h1 class="privacy-hero__title">{n}</h1>
       <p class="privacy-hero__promise">{promise}</p>
-      <p class="privacy-hero__updated">Effective: {DATE} · Last updated: {DATE}</p>
+      <p class="privacy-hero__updated">Effective: {DATE} · Last updated: {a.get("updated", DATE)}</p>
     </div>
   </section>
 
